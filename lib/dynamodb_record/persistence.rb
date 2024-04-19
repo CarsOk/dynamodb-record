@@ -7,7 +7,7 @@ module DynamodbRecord
 
     class_methods do
       def table_name
-        name = ActiveSupport::Inflector.tableize(base_class.name)
+        name = ActiveSupport::Inflector.tableize(base_class.name).split('/').last
         @table_name ||= DynamodbRecord::Config.namespace ? "#{DynamodbRecord::Config.namespace}-#{name}" : name
       end
 

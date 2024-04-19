@@ -9,7 +9,6 @@ module DynamodbRecord
         key = { 'id' => id }
 
         key[self.range_key] = range_key if self.range_key
-        puts table_name
         response = client.get_item(
           table_name:,
           key:
