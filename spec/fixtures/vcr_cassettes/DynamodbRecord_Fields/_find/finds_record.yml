@@ -19,13 +19,13 @@ http_interactions:
       Host:
       - localhost:8000
       X-Amz-Date:
-      - 20240419T150314Z
+      - 20240426T004444Z
       X-Amz-Content-Sha256:
       - 7e2248df156bd85d1c08add1aaa7b84ed6041fe96165fb6879ddbb1424663802
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=AKIAV3OBKSDM5UO5PK5A/20240419/us-east-1/dynamodb/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=AKIAV3OBKSDM5UO5PK5A/20240426/us-east-1/dynamodb/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=eabad8cbbf72dd69908f08a4144d979c1287ad246a253639c311a2ddda0ae2df
+        Signature=7ad9fd348878ca27a2ea9c93bd4ca02a6cefe8a455429d1f7d4931ff8004825e
       Content-Length:
       - '62'
       Accept:
@@ -36,9 +36,9 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 19 Apr 2024 15:03:14 GMT
+      - Fri, 26 Apr 2024 00:44:44 GMT
       X-Amzn-Requestid:
-      - 8dff3212-b275-4948-a0ff-197f620c2344
+      - 487bfb5e-a7fc-4bfd-9763-c61930591f5c
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Crc32:
@@ -50,5 +50,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"Item":{"balance":{"N":"0"},"id":{"S":"hguzman10@gmail.com"}}}'
-  recorded_at: Fri, 19 Apr 2024 15:03:14 GMT
+  recorded_at: Fri, 26 Apr 2024 00:44:44 GMT
 recorded_with: VCR 6.2.0

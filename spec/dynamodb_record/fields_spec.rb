@@ -17,8 +17,12 @@ RSpec.describe DynamodbRecord::Fields do
     end
     expect(Employee.attributes).to eq({ id: { type: :string, options: {} },
                                         first_name: { type: :string, options: {} },
-                                        last_name: { type: :string, options: {} } })
+                                        last_name: { type: :string, options: {} },
+                                        created_at: { type: :datetime, options: {} },
+                                        updated_at: { type: :datetime, options: {} }
+                                      })
   end
+
 
   it 'accepts default value' do
     class City

@@ -6,6 +6,12 @@ module DynamodbRecord
 
     class_methods do
       def find(id, range_key = nil)
+        find!(id, range_key)
+      rescue StandardError
+        nil
+      end
+
+      def find!(id, range_key = nil)
         key = { 'id' => id }
 
         key[self.range_key] = range_key if self.range_key
@@ -13,7 +19,7 @@ module DynamodbRecord
           table_name:,
           key:
         )
-        response.item ? from_database(response.item) : nil
+        response.item ? from_database(response.item) : raise('Record Not Found')
       end
     end
   end

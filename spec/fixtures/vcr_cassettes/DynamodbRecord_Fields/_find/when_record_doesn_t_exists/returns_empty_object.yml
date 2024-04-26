@@ -19,13 +19,13 @@ http_interactions:
       Host:
       - localhost:8000
       X-Amz-Date:
-      - 20240419T150314Z
+      - 20240426T004553Z
       X-Amz-Content-Sha256:
       - acbe242b07a1de9c8a8ac78119a8da7e4bf1d57c7d59ed18930d06ad600c9d6c
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=AKIAV3OBKSDM5UO5PK5A/20240419/us-east-1/dynamodb/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=AKIAV3OBKSDM5UO5PK5A/20240426/us-east-1/dynamodb/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=47085d1e327831fd245c6c4e369ab311a42ec360f91eb745820dec01bafc46d5
+        Signature=44e65913fed63c074acdcbfc2abde8a46e8e3d838e429f74386763ac63f32a00
       Content-Length:
       - '51'
       Accept:
@@ -36,9 +36,9 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 19 Apr 2024 15:03:14 GMT
+      - Fri, 26 Apr 2024 00:45:53 GMT
       X-Amzn-Requestid:
-      - cbb6dfa5-b168-48ab-a3d6-64eca11dbc6e
+      - '091b1c6c-4b29-4901-9748-c865bae5affb'
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Crc32:
@@ -50,5 +50,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "{}"
-  recorded_at: Fri, 19 Apr 2024 15:03:14 GMT
+  recorded_at: Fri, 26 Apr 2024 00:45:53 GMT
 recorded_with: VCR 6.2.0

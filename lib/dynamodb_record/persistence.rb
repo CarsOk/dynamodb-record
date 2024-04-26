@@ -108,6 +108,9 @@ module DynamodbRecord
       options = self.class.default_options
 
       self.id = SecureRandom.uuid if id.nil?
+      time = Time.now
+      self.created_at = time if created_at.nil?
+      self.updated_at = time
 
       if @new_record # New item. Don't overwrite if id exists
         options.merge!(condition_expression: 'id <> :s', expression_attribute_values: { ':s' => id })

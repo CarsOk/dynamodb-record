@@ -7,7 +7,7 @@ A simple DynamoDB ORM container on aws-sdk v3 forked from https://github.com/yet
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'dynamo_record'
+gem 'dynamodb_record'
 ```
 
 And then execute:
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install dynamo_record
+    $ gem install dynamodb_record
 
 ## Usage
 
@@ -71,7 +71,10 @@ users = User.where(first_name: 'John', limit: 5)
 
 user = User.find('f9b351b0-d06d-4fff-b8d4-8af162e2b8ba')
 ```
-
+#### With error
+```ruby
+User.find!('f9b351b0-d06d-4fff-b8d4-8af162e2b8ba')
+```
 
 ## Contributing
 

@@ -11,6 +11,8 @@ module DynamodbRecord
 
       # default hash key
       field :id, :string
+      field :created_at, :datetime
+      field :updated_at, :datetime
     end
 
     class_methods do
