@@ -54,7 +54,7 @@ module DynamodbRecord
           indexes << key if value[:options][:index]
         end
 
-        global_secondary_indexes = []
+        global_secoglobal_secondary_indexesndary_indexes = []
         indexes.each do |index|
           index_definition = {}
           index_definition[:index_name] = "#{index}_index"

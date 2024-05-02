@@ -9,7 +9,7 @@ module DynamodbRecord
     def initialize(pager, klass, options = {})
       @klass = klass
       @table_name = options[:table_name]
-      @foreign_key = options[:expression_attribute_values].transform_keys { |k| k.delete_prefix(':').to_sym }
+      @foreign_key = options[:expression_attribute_values].transform_keys { |k| k.delete_prefix(':').to_sym } rescue nil
       @items = pager.items.map { |item| klass.send(:from_database, item) }
       @last_evaluated_key = pager.last_evaluated_key
     end
