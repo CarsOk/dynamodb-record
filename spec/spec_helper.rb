@@ -18,4 +18,6 @@ end
 DynamodbRecord.configure do |config|
   config.namespace = nil
   config.endpoint = 'http://localhost:8000'
+  config.access_key_id = ENV['DYNAMODB_KEY'] || 'key'
+  config.secret_access_key = ENV['DYNAMODB_SECRET'] || 'secret'
 end

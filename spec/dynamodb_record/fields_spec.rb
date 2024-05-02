@@ -42,12 +42,14 @@ RSpec.describe DynamodbRecord::Fields do
       field :big_decimal_field, :big_decimal
       field :datetime_field, :datetime
       field :boolean_field, :boolean
+      field :array_field, :array
     end
 
     expect(Record.new(integer_field: '1').integer_field).to be_a(Integer)
     expect(Record.new(big_decimal_field: '1').big_decimal_field).to be_a(BigDecimal)
     expect(Record.new(datetime_field: '2014-12-25T04:08:25Z').datetime_field).to eq(DateTime.parse('2014-12-25T04:08:25Z'))
     expect(Record.new(boolean_field: 'true').boolean_field).to be_truthy
+    expect(Record.new(array_field: %w[admin assistant]).array_field).to be_truthy
   end
 
   it 'coearce field to its data type when calling writer' do

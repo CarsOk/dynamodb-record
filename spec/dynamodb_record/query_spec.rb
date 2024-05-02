@@ -1,6 +1,13 @@
 require 'spec_helper'
 
 RSpec.describe DynamodbRecord::Query, :vcr do
+  describe '#all' do
+    it 'find all records' do
+      user = User.all
+      expect(user.count).to eq(1)
+      expect(user.map(&:id)).to eq(['hguzman20@gmail.com'])
+    end
+  end
   describe 'querying' do
     describe '#where' do
       it 'returns records where user balance = 0' do

@@ -59,6 +59,12 @@ module DynamodbRecord
           else
             DateTime.parse(value)
           end
+        when :array
+          if value.is_a?(Array)
+            value
+          else
+            raise ArgumentError, 'Array column'
+          end
         else
           raise ArgumentError, "Unknown type #{options[:type]}"
         end
