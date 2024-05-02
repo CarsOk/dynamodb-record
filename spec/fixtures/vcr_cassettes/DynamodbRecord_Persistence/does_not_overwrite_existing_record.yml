@@ -1,0 +1,104 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:8000/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"users","ConditionExpression":"id <> :s","ExpressionAttributeValues":{":s":{"S":"hguzman10@gmail.com"}},"Item":{"balance":{"N":"100"},"id":{"S":"hguzman10@gmail.com"},"created_at":{"S":"2024-05-01T19:36:43-05:00"},"updated_at":{"S":"2024-05-01T19:36:43-05:00"}}}'
+    headers:
+      Accept-Encoding:
+      - ''
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Target:
+      - DynamoDB_20120810.PutItem
+      User-Agent:
+      - aws-sdk-ruby3/3.191.3 ua/2.0 api/dynamodb#1.105.0 os/macos#20 md/x86_64 lang/ruby#3.2.3
+        md/3.2.3 cfg/retry-mode#legacy
+      Host:
+      - localhost:8000
+      X-Amz-Date:
+      - 20240502T003643Z
+      X-Amz-Content-Sha256:
+      - 6ba894a3f3d7e47c03481928aa642e796e2e8b11c8f7a85324b66918fabe67fb
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAV3OBKSDM5UO5PK5A/20240502/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=ecc9987a544fe53aa846cf53473b4438e6c7ca89b3db1d77cc163d28965c0d34
+      Content-Length:
+      - '275'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Thu, 02 May 2024 00:36:43 GMT
+      X-Amzn-Requestid:
+      - abb2b185-4ffa-4b9e-b7b9-73a56fe18b8f
+      Content-Type:
+      - application/x-amz-json-1.0
+      Content-Length:
+      - '120'
+      Server:
+      - Jetty(11.0.17)
+    body:
+      encoding: UTF-8
+      string: '{"__type":"com.amazonaws.dynamodb.v20120810#ConditionalCheckFailedException","Message":"The
+        conditional request failed"}'
+  recorded_at: Thu, 02 May 2024 00:36:43 GMT
+- request:
+    method: post
+    uri: http://localhost:8000/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"users","Key":{"id":{"S":"hguzman10@gmail.com"}}}'
+    headers:
+      Accept-Encoding:
+      - ''
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Target:
+      - DynamoDB_20120810.GetItem
+      User-Agent:
+      - aws-sdk-ruby3/3.191.3 ua/2.0 api/dynamodb#1.105.0 os/macos#20 md/x86_64 lang/ruby#3.2.3
+        md/3.2.3 cfg/retry-mode#legacy
+      Host:
+      - localhost:8000
+      X-Amz-Date:
+      - 20240502T003643Z
+      X-Amz-Content-Sha256:
+      - 7e2248df156bd85d1c08add1aaa7b84ed6041fe96165fb6879ddbb1424663802
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAV3OBKSDM5UO5PK5A/20240502/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=e61f5c53269131bf5f985bfbe1385615456dcedad7ae5fce0fe1ce0a4e854705
+      Content-Length:
+      - '62'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 02 May 2024 00:36:43 GMT
+      X-Amzn-Requestid:
+      - 05b8fc5c-d523-4191-bac0-d31621e3857c
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Crc32:
+      - '1030740054'
+      Content-Length:
+      - '157'
+      Server:
+      - Jetty(11.0.17)
+    body:
+      encoding: UTF-8
+      string: '{"Item":{"created_at":{"S":"2024-05-01T19:36:43-05:00"},"id":{"S":"hguzman10@gmail.com"},"balance":{"N":"0"},"updated_at":{"S":"2024-05-01T19:36:43-05:00"}}}'
+  recorded_at: Thu, 02 May 2024 00:36:43 GMT
+recorded_with: VCR 6.2.0

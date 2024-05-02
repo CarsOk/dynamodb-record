@@ -5,9 +5,9 @@ module DynamodbRecord
     extend ActiveSupport::Concern
 
     included do
-      class_attribute :attributes, :hash_key, instance_writer: true
+      class_attribute :attributes, instance_writer: true
       self.attributes = {}
-      self.hash_key = nil
+      # self.hash_key = nil
 
       # default hash key
       field :id, :string
@@ -21,7 +21,8 @@ module DynamodbRecord
         # Add attributes
         attributes.merge!(name => { type:, options: opts })
 
-        self.hash_key = name if opts[:hash_key]
+        # self.hash_key = name if opts[:hash_key]
+        # self.range_key = name if opts[:range_key]
 
         # Generate methods to field
         define_method("#{named}=") { |value| write_attribute(named, value) }
@@ -77,28 +78,21 @@ module DynamodbRecord
       def unload(attrs)
         {}.tap do |hash|
           attrs.each do |key, value|
-            if attributes[key.to_sym][:options][:hash_key]
-              # puts "KEY #{key} | #{dump_field(value, self.attributes[key.to_sym])}"
-              hash[:pk] = dump_field(value, attributes[key.to_sym])
-            end
+            # if attributes[key.to_sym][:options][:hash_key]
+            #   hash[:pk] = dump_field(value, attributes[key.to_sym])
+            # end
 
-            # puts "KEY #{key}|#{value}|#{self.attributes[key.to_sym]}"
             hash[key] = dump_field(value, attributes[key.to_sym])
-            # puts "HASH: #{hash}"
           end
         end
       end
 
       def hash_key
-        :id # default hash key
+        @hash_key = attributes.select { |_k,v| v[:options][:hash_key] }.keys.first || :id
       end
 
       def range_key
-        @range_key ||= begin
-          attributes.select { |_k, v| v[:options][:range_key] }.keys.first
-        rescue StandardError
-          nil
-        end
+        @range_key ||= attributes.select { |_k,v| v[:options][:range_key] }.keys.first rescue nil
       end
 
       def secondary_indexes

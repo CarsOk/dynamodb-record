@@ -117,13 +117,22 @@ module DynamodbRecord
       end
 
       options.merge!(item: self.class.unload(attributes))
+      # puts options
       self.class.client.put_item(options)
       @new_record = false
     end
 
     def destroy
       options = self.class.default_options
-      key = { 'pk' => pk, 'sk' => sk }
+      hash_key = self.class.hash_key
+      range_key = self.class.range_key
+      key = {}
+      key[hash_key] = self.class.dump_field(self.read_attribute(hash_key), self.class.attributes[hash_key])
+
+      if range_key.present?
+        key[range_key] = self.class.dump_field(self.read_attribute(range_key), self.class.attributes[range_key])
+      end
+
       self.class.client.delete_item(options.merge(key:))
     end
   end

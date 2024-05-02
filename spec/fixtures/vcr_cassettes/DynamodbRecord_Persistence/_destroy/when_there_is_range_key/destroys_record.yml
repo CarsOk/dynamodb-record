@@ -1,0 +1,156 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:8000/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"authorizations","Key":{"user_id":{"S":"hguzman10@gmail.com"},"service_id":{"S":"1"}}}'
+    headers:
+      Accept-Encoding:
+      - ''
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Target:
+      - DynamoDB_20120810.GetItem
+      User-Agent:
+      - aws-sdk-ruby3/3.191.3 ua/2.0 api/dynamodb#1.105.0 os/macos#20 md/x86_64 lang/ruby#3.2.3
+        md/3.2.3 cfg/retry-mode#legacy
+      Host:
+      - localhost:8000
+      X-Amz-Date:
+      - 20240502T001527Z
+      X-Amz-Content-Sha256:
+      - 904e20d3b7d573308942eb45e345aed8a0d28331d9087eb40a19412554c62258
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAV3OBKSDM5UO5PK5A/20240502/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=a27d2463aed9f0c4f86c0db83f3d99d3e15b3482533e4d3c4430fda0de0e1312
+      Content-Length:
+      - '99'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 02 May 2024 00:15:27 GMT
+      X-Amzn-Requestid:
+      - b0ad8800-588e-433b-b314-539bd7598d91
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Crc32:
+      - '2017503589'
+      Content-Length:
+      - '71'
+      Server:
+      - Jetty(11.0.17)
+    body:
+      encoding: UTF-8
+      string: '{"Item":{"user_id":{"S":"hguzman10@gmail.com"},"service_id":{"S":"1"}}}'
+  recorded_at: Thu, 02 May 2024 00:15:27 GMT
+- request:
+    method: post
+    uri: http://localhost:8000/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"authorizations","Key":{"user_id":{"S":"hguzman10@gmail.com"},"service_id":{"S":"1"}}}'
+    headers:
+      Accept-Encoding:
+      - ''
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Target:
+      - DynamoDB_20120810.DeleteItem
+      User-Agent:
+      - aws-sdk-ruby3/3.191.3 ua/2.0 api/dynamodb#1.105.0 os/macos#20 md/x86_64 lang/ruby#3.2.3
+        md/3.2.3 cfg/retry-mode#legacy
+      Host:
+      - localhost:8000
+      X-Amz-Date:
+      - 20240502T001527Z
+      X-Amz-Content-Sha256:
+      - 904e20d3b7d573308942eb45e345aed8a0d28331d9087eb40a19412554c62258
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAV3OBKSDM5UO5PK5A/20240502/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=8b44cb46b1680b538fe9455591b2a9cc8d28fd93ac35a154afed681e468130fd
+      Content-Length:
+      - '99'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 02 May 2024 00:15:27 GMT
+      X-Amzn-Requestid:
+      - '016797fb-ab5f-4574-88f3-7e826cac42df'
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Crc32:
+      - '2745614147'
+      Content-Length:
+      - '2'
+      Server:
+      - Jetty(11.0.17)
+    body:
+      encoding: UTF-8
+      string: "{}"
+  recorded_at: Thu, 02 May 2024 00:15:27 GMT
+- request:
+    method: post
+    uri: http://localhost:8000/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"authorizations","Key":{"user_id":{"S":"hguzman10@gmail.com"},"service_id":{"S":"1"}}}'
+    headers:
+      Accept-Encoding:
+      - ''
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Target:
+      - DynamoDB_20120810.GetItem
+      User-Agent:
+      - aws-sdk-ruby3/3.191.3 ua/2.0 api/dynamodb#1.105.0 os/macos#20 md/x86_64 lang/ruby#3.2.3
+        md/3.2.3 cfg/retry-mode#legacy
+      Host:
+      - localhost:8000
+      X-Amz-Date:
+      - 20240502T001527Z
+      X-Amz-Content-Sha256:
+      - 904e20d3b7d573308942eb45e345aed8a0d28331d9087eb40a19412554c62258
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAV3OBKSDM5UO5PK5A/20240502/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=a27d2463aed9f0c4f86c0db83f3d99d3e15b3482533e4d3c4430fda0de0e1312
+      Content-Length:
+      - '99'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 02 May 2024 00:15:27 GMT
+      X-Amzn-Requestid:
+      - f7ad1c7f-8266-4da1-8355-7200d06d4f97
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Crc32:
+      - '2745614147'
+      Content-Length:
+      - '2'
+      Server:
+      - Jetty(11.0.17)
+    body:
+      encoding: UTF-8
+      string: "{}"
+  recorded_at: Thu, 02 May 2024 00:15:27 GMT
+recorded_with: VCR 6.2.0
