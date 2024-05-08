@@ -1,0 +1,55 @@
+AllCops:
+  TargetRubyVersion: 3.2
+  NewCops: enable
+  Exclude:
+    - 'spec/dummy/bin/*'
+    - vendor/**
+    - 'vendor/**/*'
+    - vendor/bundle/**/*
+    - bin/**
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+Metrics/BlockLength:
+  Max: 36
+  Exclude:
+    - spec/**/*.rb
+    - fleteo.gemspec
+
+Lint/ConstantDefinitionInBlock:
+  Exclude:
+    - spec/**/**/*.rb
+Metrics/BlockNesting:
+  Max: 2
+Metrics/MethodLength:
+  CountComments: false
+  Max: 15
+Metrics/ModuleLength:
+  Max: 120
+Metrics/ClassLength:
+  Max: 120
+Metrics/ParameterLists:
+  Max: 5
+  CountKeywordArgs: true
+Style/CollectionMethods:
+  Enabled: true
+  PreferredMethods:
+    collect:  'map'
+    collect!: 'map!'
+    inject:   'reduce'
+    find:     'detect'
+    find_all: 'select'
+    delete:   'gsub'
+Layout/DotPosition:
+  EnforcedStyle: trailing
+
+#Layout/LineLength:
+#  Max: 100
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: 'no_comma'
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: 'no_comma'
+
+Gemspec/DevelopmentDependencies:
+  EnforcedStyle: gemspec

@@ -1,18 +1,24 @@
 # frozen_string_literal: true
 
 module DynamodbRecord
-  class Collection
+  # +Dynamodb::HasManyThroughCollection+ is a class that represent a ManyToManyCollection
+  class HasManyThroughCollection
     include Enumerable
-
-    # attr_reader :last_evaluated_key
 
     def initialize(pager, base_object)
       @base_object = base_object
       @pager = pager
       @klass = @pager.klass
       @options = @pager.options
-      items = @pager.items
-      @items = items.map { |item| @klass.send(:from_database, item) }
+      @items = []
+      @pager.items.each do |item|
+        # p item
+        object = @klass.client.get_item(
+          table_name: @klass.table_name,
+          key: {id: item["#{@klass.to_s.downcase}_id"]}
+        )
+        @items << @klass.send(:from_database, object.item)
+      end
     end
 
     def each(&)

@@ -1,0 +1,105 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:8000/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"insurances","Key":{"id":{"S":"12345"}}}'
+    headers:
+      Accept-Encoding:
+      - ''
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Target:
+      - DynamoDB_20120810.GetItem
+      User-Agent:
+      - aws-sdk-ruby3/3.191.3 ua/2.0 api/dynamodb#1.105.0 os/macos#20 md/x86_64 lang/ruby#3.2.3
+        md/3.2.3 cfg/retry-mode#legacy
+      Host:
+      - localhost:8000
+      X-Amz-Date:
+      - 20240512T015903Z
+      X-Amz-Content-Sha256:
+      - af4fbab2106a31baca5b683427566e6620dff714a4febf67de21d62fe9aff004
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=key/20240512/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=dc0c15194ac1d51a4ad8984e48a0cc3114c900a6b00e2f4dbe13d1a32a53e894
+      Content-Length:
+      - '53'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 12 May 2024 01:59:03 GMT
+      X-Amzn-Requestid:
+      - 20483dcf-8a64-4be9-afd8-a5c35c328725
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Crc32:
+      - '4004972195'
+      Content-Length:
+      - '80'
+      Server:
+      - Jetty(11.0.17)
+    body:
+      encoding: UTF-8
+      string: '{"Item":{"name":{"S":"Colcerautos"},"car_id":{"S":"UVX455"},"id":{"S":"12345"}}}'
+  recorded_at: Sun, 12 May 2024 01:59:03 GMT
+- request:
+    method: post
+    uri: http://localhost:8000/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"cars","Key":{"id":{"S":"UVX455"}}}'
+    headers:
+      Accept-Encoding:
+      - ''
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Target:
+      - DynamoDB_20120810.GetItem
+      User-Agent:
+      - aws-sdk-ruby3/3.191.3 ua/2.0 api/dynamodb#1.105.0 os/macos#20 md/x86_64 lang/ruby#3.2.3
+        md/3.2.3 cfg/retry-mode#legacy
+      Host:
+      - localhost:8000
+      X-Amz-Date:
+      - 20240512T015903Z
+      X-Amz-Content-Sha256:
+      - 53644a2bbab903704867eb87df0fdfe6dd8cb8ac9e1dae5715033d0f636fd592
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=key/20240512/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=436e2db7a75c43c788be0473b6806936b97b7398f33009895010fa5a3eaee5c4
+      Content-Length:
+      - '48'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 12 May 2024 01:59:03 GMT
+      X-Amzn-Requestid:
+      - b464ed64-837b-4632-9b14-93a788d62b8d
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Crc32:
+      - '590923779'
+      Content-Length:
+      - '149'
+      Server:
+      - Jetty(11.0.17)
+    body:
+      encoding: UTF-8
+      string: '{"Item":{"marca":{"S":"Chvrolet"},"created_at":{"S":"2024-05-07T14:09:25-05:00"},"id":{"S":"UVX455"},"updated_at":{"S":"2024-05-07T14:09:25-05:00"}}}'
+  recorded_at: Sun, 12 May 2024 01:59:03 GMT
+recorded_with: VCR 6.2.0

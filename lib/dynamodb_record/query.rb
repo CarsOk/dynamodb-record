@@ -1,3 +1,4 @@
+# rubocop:disable Style/FrozenStringLiteralComment
 
 module DynamodbRecord
   # Query Module
@@ -9,8 +10,8 @@ module DynamodbRecord
       def all(opts = {})
         options = default_options
         options.merge!(opts.slice(:limit))
-        response = client.scan(options)
-        DynamodbRecord::Collection.new(response, self)
+        scan_pager = ScanPager.new(options, self)
+        Collection.new(scan_pager, self)
       end
 
       # search table
@@ -23,7 +24,7 @@ module DynamodbRecord
         expression_attribute_values = {}
         filter_expression = ''
         opts.each do |key, value|
-          expression_attribute_names["##{key}".to_sym] = key.to_s
+          expression_attribute_names[:"##{key}"] = key.to_s
           expression_attribute_values[":#{key}"] = value
           filter_expression << if filter_expression.empty?
                                  "##{key} = :#{key}"
@@ -37,13 +38,15 @@ module DynamodbRecord
         options.merge!(expression_attribute_names:) if expression_attribute_names.present?
         options.merge!(expression_attribute_values:) if expression_attribute_values.present?
         options.merge!(filter_expression:) if filter_expression.present?
-        if exclusive_start_key.present?
-          json_string_decode = Base64.urlsafe_decode64(exclusive_start_key)
-          decode = JSON.parse(json_string_decode)
-          options.merge!(exclusive_start_key: decode)
-        end
-        DynamodbRecord::Collection.new(client.scan(options), self)
+
+        options.merge!(exclusive_start_key:) if exclusive_start_key
+
+        scan_pager = ScanPager.new(options, self)
+        Collection.new(scan_pager, self)
+
+        # DynamodbRecord::Collection.new(client.scan(options), self)
       end
     end
   end
 end
+# rubocop:enable Style/FrozenStringLiteralComment

@@ -19,7 +19,7 @@ module DynamodbRecord
       def field(name, type = :string, opts = {})
         named = name.to_s
         # Add attributes
-        attributes.merge!(name => { type:, options: opts })
+        attributes.merge!(name => {type:, options: opts})
 
         # self.hash_key = name if opts[:hash_key]
         # self.range_key = name if opts[:range_key]
@@ -60,11 +60,10 @@ module DynamodbRecord
             DateTime.parse(value)
           end
         when :array
-          if value.is_a?(Array)
-            value
-          else
-            raise ArgumentError, 'Array column'
-          end
+          raise ArgumentError, 'Array column' unless value.is_a?(Array)
+
+          value
+
         else
           raise ArgumentError, "Unknown type #{options[:type]}"
         end
@@ -84,21 +83,21 @@ module DynamodbRecord
       def unload(attrs)
         {}.tap do |hash|
           attrs.each do |key, value|
-            # if attributes[key.to_sym][:options][:hash_key]
-            #   hash[:pk] = dump_field(value, attributes[key.to_sym])
-            # end
-
             hash[key] = dump_field(value, attributes[key.to_sym])
           end
         end
       end
 
       def hash_key
-        @hash_key = attributes.select { |_k,v| v[:options][:hash_key] }.keys.first || :id
+        @hash_key = attributes.select { |_k, v| v[:options][:hash_key] }.keys.first || :id
       end
 
       def range_key
-        @range_key ||= attributes.select { |_k,v| v[:options][:range_key] }.keys.first rescue nil
+        @range_key ||= begin
+          attributes.select { |_k, v| v[:options][:range_key] }.keys.first
+        rescue StandardError
+          nil
+        end
       end
 
       def secondary_indexes

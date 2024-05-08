@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module DynamodbRecord
+  # +Dynamodb::Finders+ is a class that represent a Finders
   module Finders
     extend ActiveSupport::Concern
 

@@ -16,6 +16,12 @@ require 'dynamodb_record/associations'
 require 'dynamodb_record/finders'
 require 'dynamodb_record/query'
 require 'dynamodb_record/document'
+require 'dynamodb_record/pager'
+require 'dynamodb_record/query_pager'
+require 'dynamodb_record/scan_pager'
+require 'dynamodb_record/has_and_belongs_to_many_collection'
+require 'dynamodb_record/has_many_through_collection'
+require 'dynamodb_record/has_many_collection'
 
 module DynamodbRecord
   extend self

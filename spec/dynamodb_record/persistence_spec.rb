@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 RSpec.describe DynamodbRecord::Persistence, :vcr do
-
   it 'saves record' do
     user = User.new(id: 'hguzman10@gmail.com')
     user.save

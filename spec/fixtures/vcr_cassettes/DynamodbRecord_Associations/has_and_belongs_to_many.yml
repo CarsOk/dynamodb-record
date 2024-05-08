@@ -1,0 +1,157 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:8000/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"cars","Key":{"id":{"S":"UVX455"}}}'
+    headers:
+      Accept-Encoding:
+      - ''
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Target:
+      - DynamoDB_20120810.GetItem
+      User-Agent:
+      - aws-sdk-ruby3/3.191.3 ua/2.0 api/dynamodb#1.105.0 os/macos#20 md/x86_64 lang/ruby#3.2.3
+        md/3.2.3 cfg/retry-mode#legacy
+      Host:
+      - localhost:8000
+      X-Amz-Date:
+      - 20240510T153124Z
+      X-Amz-Content-Sha256:
+      - 53644a2bbab903704867eb87df0fdfe6dd8cb8ac9e1dae5715033d0f636fd592
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=key/20240510/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=aabf32c5d98f0cb8d883d2be1fcbedb04b65b0c6c2d38ff4172a1d31a6bfa438
+      Content-Length:
+      - '48'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 10 May 2024 15:31:24 GMT
+      X-Amzn-Requestid:
+      - a1a0ed0c-b027-4df9-85a1-aeb1343d66f1
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Crc32:
+      - '590923779'
+      Content-Length:
+      - '149'
+      Server:
+      - Jetty(11.0.17)
+    body:
+      encoding: UTF-8
+      string: '{"Item":{"marca":{"S":"Chvrolet"},"created_at":{"S":"2024-05-07T14:09:25-05:00"},"id":{"S":"UVX455"},"updated_at":{"S":"2024-05-07T14:09:25-05:00"}}}'
+  recorded_at: Fri, 10 May 2024 15:31:24 GMT
+- request:
+    method: post
+    uri: http://localhost:8000/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"subscriptions","IndexName":"car_id_index","KeyConditionExpression":"#car_id
+        = :car_id","ExpressionAttributeNames":{"#car_id":"car_id"},"ExpressionAttributeValues":{":car_id":{"S":"UVX455"}},"Limit":1}'
+    headers:
+      Accept-Encoding:
+      - ''
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Target:
+      - DynamoDB_20120810.Query
+      User-Agent:
+      - aws-sdk-ruby3/3.191.3 ua/2.0 api/dynamodb#1.105.0 os/macos#20 md/x86_64 lang/ruby#3.2.3
+        md/3.2.3 cfg/retry-mode#legacy
+      Host:
+      - localhost:8000
+      X-Amz-Date:
+      - 20240510T153124Z
+      X-Amz-Content-Sha256:
+      - a8ff850c4aeb9c9af304ba26c2cdbd7da707db1921602173d7d3d4d6c17fd101
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=key/20240510/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=5b17cf94981747e27477a2e746af96998ae6648b22986d06995737020d9de8b6
+      Content-Length:
+      - '214'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 10 May 2024 15:31:24 GMT
+      X-Amzn-Requestid:
+      - 6b579265-07a9-4be1-913c-533ed443fbb1
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Crc32:
+      - '3624557612'
+      Content-Length:
+      - '185'
+      Server:
+      - Jetty(11.0.17)
+    body:
+      encoding: UTF-8
+      string: '{"Items":[{"car_id":{"S":"UVX455"},"user_id":{"S":"hguzman10@gmail.com"},"id":{"S":"ASDFG"}}],"Count":1,"ScannedCount":1,"LastEvaluatedKey":{"car_id":{"S":"UVX455"},"id":{"S":"ASDFG"}}}'
+  recorded_at: Fri, 10 May 2024 15:31:24 GMT
+- request:
+    method: post
+    uri: http://localhost:8000/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"users","Key":{"id":{"S":"hguzman10@gmail.com"}}}'
+    headers:
+      Accept-Encoding:
+      - ''
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Target:
+      - DynamoDB_20120810.GetItem
+      User-Agent:
+      - aws-sdk-ruby3/3.191.3 ua/2.0 api/dynamodb#1.105.0 os/macos#20 md/x86_64 lang/ruby#3.2.3
+        md/3.2.3 cfg/retry-mode#legacy
+      Host:
+      - localhost:8000
+      X-Amz-Date:
+      - 20240510T153124Z
+      X-Amz-Content-Sha256:
+      - 7e2248df156bd85d1c08add1aaa7b84ed6041fe96165fb6879ddbb1424663802
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=key/20240510/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=148c8308f7139ad29b0c868b5c835044c7247c54a39347e603514301bca0dc42
+      Content-Length:
+      - '62'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 10 May 2024 15:31:24 GMT
+      X-Amzn-Requestid:
+      - f619c0fb-46a2-4016-a59f-749d48435612
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Crc32:
+      - '3262869781'
+      Content-Length:
+      - '157'
+      Server:
+      - Jetty(11.0.17)
+    body:
+      encoding: UTF-8
+      string: '{"Item":{"created_at":{"S":"2024-05-07T14:10:09-05:00"},"id":{"S":"hguzman10@gmail.com"},"balance":{"N":"0"},"updated_at":{"S":"2024-05-07T14:10:09-05:00"}}}'
+  recorded_at: Fri, 10 May 2024 15:31:24 GMT
+recorded_with: VCR 6.2.0

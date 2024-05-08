@@ -12,7 +12,7 @@ module DynamodbRecord
       end
 
       def client
-        opts = { region: DynamodbRecord::Config.region }
+        opts = {region: DynamodbRecord::Config.region}
         opts[:endpoint] = DynamodbRecord::Config.endpoint if DynamodbRecord::Config.endpoint
         opts[:access_key_id] = DynamodbRecord::Config.access_key_id if DynamodbRecord::Config.access_key_id
         opts[:secret_access_key] = DynamodbRecord::Config.access_key_id if DynamodbRecord::Config.secret_access_key
@@ -20,7 +20,7 @@ module DynamodbRecord
       end
 
       def default_options
-        { table_name: }
+        {table_name:}
       end
 
       def describe_table
@@ -36,16 +36,16 @@ module DynamodbRecord
         key_schema = []
 
         # Default id hash key
-        attribute_definitions << { attribute_name: 'id',
-                                   attribute_type: 'S' }
-        key_schema << { attribute_name: 'id',
-                        key_type: 'HASH' }
+        attribute_definitions << {attribute_name: 'id',
+                                  attribute_type: 'S'}
+        key_schema << {attribute_name: 'id',
+                       key_type: 'HASH'}
 
         if range_key
-          attribute_definitions << { attribute_name: range_key.to_s,
-                                     attribute_type: dynamodb_type(attributes[range_key][:type]) }
-          key_schema << { attribute_name: range_key.to_s,
-                          key_type: 'RANGE' }
+          attribute_definitions << {attribute_name: range_key.to_s,
+                                    attribute_type: dynamodb_type(attributes[range_key][:type])}
+          key_schema << {attribute_name: range_key.to_s,
+                         key_type: 'RANGE'}
         end
 
         # Global secondary indexes
@@ -54,20 +54,20 @@ module DynamodbRecord
           indexes << key if value[:options][:index]
         end
 
-        global_secoglobal_secondary_indexesndary_indexes = []
+        # global_secoglobal_secondary_indexesndary_indexes = []
         indexes.each do |index|
           index_definition = {}
           index_definition[:index_name] = "#{index}_index"
-          index_definition[:key_schema] = [{ attribute_name: index, key_type: 'HASH' },
-                                           { attribute_name: 'id', key_type: 'RANGE' }]
-          index_definition[:projection] = { projection_type: 'ALL' }
+          index_definition[:key_schema] = [{attribute_name: index, key_type: 'HASH'},
+                                           {attribute_name: 'id', key_type: 'RANGE'}]
+          index_definition[:projection] = {projection_type: 'ALL'}
           index_definition[:provisioned_throughput] = {
             read_capacity_units: 1,
             write_capacity_units: 1
           }
           global_secondary_indexes << index_definition
-          attribute_definitions << { attribute_name: index.to_s,
-                                     attribute_type: dynamodb_type(attributes[index][:type]) }
+          attribute_definitions << {attribute_name: index.to_s,
+                                    attribute_type: dynamodb_type(attributes[index][:type])}
         end
 
         options = {
@@ -113,7 +113,7 @@ module DynamodbRecord
       self.updated_at = time
 
       if @new_record # New item. Don't overwrite if id exists
-        options.merge!(condition_expression: 'id <> :s', expression_attribute_values: { ':s' => id })
+        options.merge!(condition_expression: 'id <> :s', expression_attribute_values: {':s' => id})
       end
 
       options.merge!(item: self.class.unload(attributes))
@@ -127,10 +127,10 @@ module DynamodbRecord
       hash_key = self.class.hash_key
       range_key = self.class.range_key
       key = {}
-      key[hash_key] = self.class.dump_field(self.read_attribute(hash_key), self.class.attributes[hash_key])
+      key[hash_key] = self.class.dump_field(read_attribute(hash_key), self.class.attributes[hash_key])
 
       if range_key.present?
-        key[range_key] = self.class.dump_field(self.read_attribute(range_key), self.class.attributes[range_key])
+        key[range_key] = self.class.dump_field(read_attribute(range_key), self.class.attributes[range_key])
       end
 
       self.class.client.delete_item(options.merge(key:))

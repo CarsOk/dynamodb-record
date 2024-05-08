@@ -18,10 +18,10 @@ RSpec.describe DynamodbRecord::Document do
   # end
 
   it 'raises error on unknown field' do
-    expect { User.new({ unknown_field: 'unknown' }) }.to raise_error(NoMethodError)
+    expect { User.new({unknown_field: 'unknown'}) }.to raise_error(NoMethodError)
   end
 
   it 'can ignore unknown field' do
-    expect { User.new({ unknown_field: 'unknown' }, true) }.to_not raise_error(NoMethodError)
+    expect { User.new({unknown_field: 'unknown'}, true) }.to_not raise_error(NoMethodError)
   end
 end

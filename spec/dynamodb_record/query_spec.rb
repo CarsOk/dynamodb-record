@@ -1,4 +1,6 @@
-require 'spec_helper'
+# frozen_string_literal: true
+
+require_relative '../spec_helper'
 
 RSpec.describe DynamodbRecord::Query, :vcr do
   describe '#all' do
@@ -18,7 +20,7 @@ RSpec.describe DynamodbRecord::Query, :vcr do
       it 'returns records by limit' do
         result = User.where(balance: 0, limit: 1)
         expect(result.count).to eq(1)
-        expect(result.last_evaluated_key).to eq('eyJpZCI6ImhndXptYW4yMEBnbWFpbC5jb20ifQ==')
+        expect(result.last_evaluated_key).to eq({'id'=>'hguzman20@gmail.com'})
       end
     end
   end

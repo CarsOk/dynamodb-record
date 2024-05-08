@@ -1,18 +1,20 @@
 # frozen_string_literal: true
 
 module DynamodbRecord
-  class Collection
+  # +Dynamodb::ManyToManyCollection+ is a class that represent a ManyToManyCollection
+  class HasManyCollection
     include Enumerable
-
-    # attr_reader :last_evaluated_key
 
     def initialize(pager, base_object)
       @base_object = base_object
       @pager = pager
       @klass = @pager.klass
       @options = @pager.options
-      items = @pager.items
-      @items = items.map { |item| @klass.send(:from_database, item) }
+      @foreign_key = @options[:expression_attribute_values].transform_keys { |k| k.delete_prefix(':').to_sym }
+      @items = []
+      @pager.items.each do |object|
+        @items << @klass.send(:from_database, object)
+      end
     end
 
     def each(&)
@@ -33,6 +35,16 @@ module DynamodbRecord
 
     def page(last_key)
       self.class.new(@pager.next_page(last_key), @base_object) if last_key
+    end
+
+    def create!(params = {})
+      raise "#{@base_object.class} must be saved" if @base_object.new_record
+
+      params.merge!(@foreign_key)
+      object = @klass.send(:from_database, params)
+      object.save!
+      @items << object
+      object
     end
   end
 end

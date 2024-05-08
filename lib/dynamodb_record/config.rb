@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module DynamodbRecord
   module Config
     extend self
