@@ -92,7 +92,6 @@ module DynamodbRecord
 
         define_method(associations) do
           options.merge!(expression_attribute_values: {":#{field}_id" => id})
-          # p options
 
           klass = Object.const_get(relation_model.capitalize)
 

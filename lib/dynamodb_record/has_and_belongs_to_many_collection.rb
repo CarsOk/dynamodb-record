@@ -41,6 +41,15 @@ module DynamodbRecord
       self.class.new(@pager.next_page(last_key), @base_object) if last_key
     end
 
+    def <<(object)
+      table_name = @options[:table_name]
+      item = @options[:expression_attribute_values].transform_keys { |k| k.delete_prefix(':').to_sym }
+      item[:"#{@klass.to_s.downcase}_id"] = object.id
+      key = {table_name:, item:}
+      @klass.client.put_item(key)
+      @items << object
+    end
+
     def create!(params = {})
       raise "#{@base_object.class} must be saved" if @base_object.new_record
 

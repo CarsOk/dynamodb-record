@@ -33,6 +33,13 @@ RSpec.describe DynamodbRecord::Associations, :vcr do
       insurance = car.insurances.create!(name: 'fasecolda')
       expect(insurance).to be_an(Insurance)
     end
+
+    it 'add list' do
+      user = User.find!('hguzman10@gmail.com')
+      car = Car.find!('UVX455')
+      user.cars << car
+      expect(user.cars.count).to eq(1)
+    end
   end
 
   describe '#belongs_to' do
