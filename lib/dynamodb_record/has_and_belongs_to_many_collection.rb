@@ -11,11 +11,11 @@ module DynamodbRecord
       @klass = @pager.klass
       @options = @pager.options
       @items = []
+      @base_model = @klass.to_s.downcase.split('::').last
       @pager.items.each do |item|
-        # p item
         object = @klass.client.get_item(
           table_name: @klass.table_name,
-          key: {id: item["#{@klass.to_s.downcase}_id"]}
+          key: {id: item["#{@base_model}_id"]}
         )
         @items << @klass.send(:from_database, object.item)
       end
@@ -44,7 +44,7 @@ module DynamodbRecord
     def <<(object)
       table_name = @options[:table_name]
       item = @options[:expression_attribute_values].transform_keys { |k| k.delete_prefix(':').to_sym }
-      item[:"#{@klass.to_s.downcase}_id"] = object.id
+      item[:"#{@base_model}_id"] = object.id
       key = {table_name:, item:}
       @klass.client.put_item(key)
       @items << object
