@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'bundler/setup'
 require 'securerandom'
 require 'active_support'
 require 'active_support/concern'

@@ -17,7 +17,7 @@ module DynamodbRecord
 
       # rubocop:disable Naming/PredicateName
       def has_many(associations)
-        base_model = to_s.downcase
+        base_model = to_s.downcase.split('::').last
         model = associations.to_s.chop
 
         define_method(associations) do
@@ -36,7 +36,7 @@ module DynamodbRecord
       end
 
       def has_many_through(associations, table)
-        base_model = to_s.downcase
+        base_model = to_s.downcase.split('::').last
         relation_model = associations.to_s.chop
         list = []
         list << base_model
@@ -69,7 +69,7 @@ module DynamodbRecord
       end
 
       def has_and_belongs_to_many(associations)
-        base_model = to_s.downcase
+        base_model = to_s.downcase.split('::').last
         relation_model = associations.to_s.chop
         list = []
         list << base_model
