@@ -5,7 +5,7 @@ http_interactions:
     uri: http://localhost:8000/
     body:
       encoding: UTF-8
-      string: '{"TableName":"users"}'
+      string: '{"TableName":"fleteo-v2-users"}'
     headers:
       Accept-Encoding:
       - ''
@@ -19,15 +19,15 @@ http_interactions:
       Host:
       - localhost:8000
       X-Amz-Date:
-      - 20240502T233108Z
+      - 20240514T152305Z
       X-Amz-Content-Sha256:
-      - 4beda0215c9ab83d1b5bba1ba2744d5a230ca7b206aad0ffee3f6bdabcff87c5
+      - 9dec864d69838ba5d22e6418808d299b1e52448b13f38b3347adcc4cd4891407
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=key/20240502/us-east-1/dynamodb/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=key/20240514/us-east-1/dynamodb/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=3c16286960a3799524892b4f88f09834f964adeed8923815f8a6e82884e3ee47
+        Signature=749f5b5fb627b4138d9a86e0b77f36a5339897e9341909dc02b810373757672d
       Content-Length:
-      - '21'
+      - '31'
       Accept:
       - "*/*"
   response:
@@ -36,19 +36,19 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 02 May 2024 23:31:08 GMT
+      - Tue, 14 May 2024 15:23:05 GMT
       X-Amzn-Requestid:
-      - 4379a646-85d4-4f6b-ba53-d7edfabd1ec2
+      - 5b5f67db-aa09-41cd-a1df-ad59eb8bd4ab
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Crc32:
-      - '2922398473'
+      - '2883154713'
       Content-Length:
-      - '111'
+      - '222'
       Server:
       - Jetty(11.0.17)
     body:
       encoding: UTF-8
-      string: '{"Items":[{"balance":{"N":"0"},"token":{"N":"0"},"id":{"S":"hguzman20@gmail.com"}}],"Count":1,"ScannedCount":1}'
-  recorded_at: Thu, 02 May 2024 23:31:08 GMT
+      string: '{"Items":[{"id":{"S":"hguzman20@gmail.com"}},{"created_at":{"S":"2024-05-08T12:22:30-05:00"},"id":{"S":"hguzman30@gmail.com"},"balance":{"N":"0"},"updated_at":{"S":"2024-05-08T12:22:30-05:00"}}],"Count":2,"ScannedCount":2}'
+  recorded_at: Tue, 14 May 2024 15:23:05 GMT
 recorded_with: VCR 6.2.0

@@ -5,7 +5,7 @@ http_interactions:
     uri: http://localhost:8000/
     body:
       encoding: UTF-8
-      string: '{"TableName":"cars","Key":{"id":{"S":"UVX455"}}}'
+      string: '{"TableName":"fleteo-v2-cars","Key":{"id":{"S":"UVX455"}}}'
     headers:
       Accept-Encoding:
       - ''
@@ -19,15 +19,15 @@ http_interactions:
       Host:
       - localhost:8000
       X-Amz-Date:
-      - 20240512T004358Z
+      - 20240514T151134Z
       X-Amz-Content-Sha256:
-      - 53644a2bbab903704867eb87df0fdfe6dd8cb8ac9e1dae5715033d0f636fd592
+      - 3f40080fdb7ac1732232c14b86645a9ffbd3f94cf8ecda6b3c584d105288bb8d
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=key/20240512/us-east-1/dynamodb/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=key/20240514/us-east-1/dynamodb/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=e4513e23bf93211ab065a785f50374cbff2f6c9577bf2e11243f94aacc525c43
+        Signature=6cccb1afecbb66dcb85e14eb44c76944e95b7fd912961a9925abef3d73dc5fd9
       Content-Length:
-      - '48'
+      - '58'
       Accept:
       - "*/*"
   response:
@@ -36,9 +36,9 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 12 May 2024 00:43:58 GMT
+      - Tue, 14 May 2024 15:11:34 GMT
       X-Amzn-Requestid:
-      - 4d01cd81-bd7e-4ece-882e-eb02e18115d6
+      - 4a8b532a-472b-4aef-9955-3e3f6bcb1865
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Crc32:
@@ -50,13 +50,14 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"Item":{"marca":{"S":"Chvrolet"},"created_at":{"S":"2024-05-07T14:09:25-05:00"},"id":{"S":"UVX455"},"updated_at":{"S":"2024-05-07T14:09:25-05:00"}}}'
-  recorded_at: Sun, 12 May 2024 00:43:58 GMT
+  recorded_at: Tue, 14 May 2024 15:11:34 GMT
 - request:
     method: post
     uri: http://localhost:8000/
     body:
       encoding: UTF-8
-      string: '{"TableName":"insurances","KeyConditionExpression":"#car_id = :car_id","ExpressionAttributeNames":{"#car_id":"car_id"},"IndexName":"car_id_index","ExpressionAttributeValues":{":car_id":{"S":"UVX455"}}}'
+      string: '{"TableName":"fleteo-v2-insurances","KeyConditionExpression":"#car_id
+        = :car_id","ExpressionAttributeNames":{"#car_id":"car_id"},"IndexName":"car_id_index","ExpressionAttributeValues":{":car_id":{"S":"UVX455"}}}'
     headers:
       Accept-Encoding:
       - ''
@@ -70,15 +71,15 @@ http_interactions:
       Host:
       - localhost:8000
       X-Amz-Date:
-      - 20240512T004358Z
+      - 20240514T151134Z
       X-Amz-Content-Sha256:
-      - fac478ef4d5e254f316f0e0816ee2d7598517ef6a29e429ca939dcd7c4d3f78b
+      - 2fbf9fb79b236e4c2e9a9151b2960806f4b6841c9205fbe138b73cbd16ff4fee
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=key/20240512/us-east-1/dynamodb/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=key/20240514/us-east-1/dynamodb/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=5e3fd77ef50b4a48f37c0f2cd6c0f0f34dc4072193bca4773a45d1520e7646c1
+        Signature=94c1464d7e64379e71d27c201909ebc469f3808a3f93578bdd2cdddb3c150c4c
       Content-Length:
-      - '201'
+      - '211'
       Accept:
       - "*/*"
   response:
@@ -87,9 +88,9 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 12 May 2024 00:43:58 GMT
+      - Tue, 14 May 2024 15:11:34 GMT
       X-Amzn-Requestid:
-      - d7d20e79-f124-424b-b7cb-18741588e97f
+      - faa50e5f-7479-49e8-9b1c-e3c2225bc5da
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Crc32:
@@ -101,5 +102,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"Items":[{"name":{"S":"Colcerautos"},"car_id":{"S":"UVX455"},"id":{"S":"12345"}}],"Count":1,"ScannedCount":1}'
-  recorded_at: Sun, 12 May 2024 00:43:58 GMT
+  recorded_at: Tue, 14 May 2024 15:11:34 GMT
 recorded_with: VCR 6.2.0

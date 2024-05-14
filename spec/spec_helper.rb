@@ -2,6 +2,13 @@
 
 require 'dynamodb_record'
 
+DynamodbRecord.configure do |config|
+  config.namespace = 'fleteo-v2'
+  config.endpoint = 'http://localhost:8000'
+  config.access_key_id = ENV['DYNAMODB_KEY'] || 'key'
+  config.secret_access_key = ENV['DYNAMODB_SECRET'] || 'secret'
+end
+
 MODELS = File.join(File.dirname(__FILE__), 'app/models')
 Dir[File.join(MODELS, '*.rb')].each { |file| require file }
 # Dir[File.join(MODELS, '*.rb')].sort.each { |file| require file }
@@ -16,9 +23,3 @@ VCR.configure do |c|
   # c.default_cassette_options = { match_requests_on: %i[method uri body] }
 end
 
-DynamodbRecord.configure do |config|
-  config.namespace = nil
-  config.endpoint = 'http://localhost:8000'
-  config.access_key_id = ENV['DYNAMODB_KEY'] || 'key'
-  config.secret_access_key = ENV['DYNAMODB_SECRET'] || 'secret'
-end

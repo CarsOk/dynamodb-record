@@ -5,7 +5,7 @@ http_interactions:
     uri: http://localhost:8000/
     body:
       encoding: UTF-8
-      string: '{"TableName":"users","Key":{"id":{"S":"not here"}}}'
+      string: '{"TableName":"fleteo-v2-users","Key":{"id":{"S":"not here"}}}'
     headers:
       Accept-Encoding:
       - ''
@@ -19,15 +19,15 @@ http_interactions:
       Host:
       - localhost:8000
       X-Amz-Date:
-      - 20240426T004553Z
+      - 20240514T151627Z
       X-Amz-Content-Sha256:
-      - acbe242b07a1de9c8a8ac78119a8da7e4bf1d57c7d59ed18930d06ad600c9d6c
+      - 9896636d21f5592fa181e582b1efe26e6c786a766326d91603b6a97dbb773cf9
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=AKIAV3OBKSDM5UO5PK5A/20240426/us-east-1/dynamodb/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=key/20240514/us-east-1/dynamodb/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=44e65913fed63c074acdcbfc2abde8a46e8e3d838e429f74386763ac63f32a00
+        Signature=cc1c5012a4daa032226e3fd40ce152ee7d84e6d4bd0e5ae636ab32e625316f26
       Content-Length:
-      - '51'
+      - '61'
       Accept:
       - "*/*"
   response:
@@ -36,9 +36,9 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 26 Apr 2024 00:45:53 GMT
+      - Tue, 14 May 2024 15:16:27 GMT
       X-Amzn-Requestid:
-      - '091b1c6c-4b29-4901-9748-c865bae5affb'
+      - 46ab761f-2f9c-40e6-a439-99b14908373d
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Crc32:
@@ -50,5 +50,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "{}"
-  recorded_at: Fri, 26 Apr 2024 00:45:53 GMT
+  recorded_at: Tue, 14 May 2024 15:16:27 GMT
 recorded_with: VCR 6.2.0

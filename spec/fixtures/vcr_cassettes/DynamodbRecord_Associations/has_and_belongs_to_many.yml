@@ -5,7 +5,7 @@ http_interactions:
     uri: http://localhost:8000/
     body:
       encoding: UTF-8
-      string: '{"TableName":"cars","Key":{"id":{"S":"UVX455"}}}'
+      string: '{"TableName":"fleteo-v2-cars","Key":{"id":{"S":"UVX455"}}}'
     headers:
       Accept-Encoding:
       - ''
@@ -19,15 +19,15 @@ http_interactions:
       Host:
       - localhost:8000
       X-Amz-Date:
-      - 20240510T153124Z
+      - 20240514T150706Z
       X-Amz-Content-Sha256:
-      - 53644a2bbab903704867eb87df0fdfe6dd8cb8ac9e1dae5715033d0f636fd592
+      - 3f40080fdb7ac1732232c14b86645a9ffbd3f94cf8ecda6b3c584d105288bb8d
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=key/20240510/us-east-1/dynamodb/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=key/20240514/us-east-1/dynamodb/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=aabf32c5d98f0cb8d883d2be1fcbedb04b65b0c6c2d38ff4172a1d31a6bfa438
+        Signature=06a5056ca7b7412abb28f73b8b51813f4ea4ed87b99dafd5b28902f1f81ddc1d
       Content-Length:
-      - '48'
+      - '58'
       Accept:
       - "*/*"
   response:
@@ -36,9 +36,9 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 10 May 2024 15:31:24 GMT
+      - Tue, 14 May 2024 15:07:06 GMT
       X-Amzn-Requestid:
-      - a1a0ed0c-b027-4df9-85a1-aeb1343d66f1
+      - ef6a1b97-0637-4f57-b952-e467f119059f
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Crc32:
@@ -50,14 +50,14 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"Item":{"marca":{"S":"Chvrolet"},"created_at":{"S":"2024-05-07T14:09:25-05:00"},"id":{"S":"UVX455"},"updated_at":{"S":"2024-05-07T14:09:25-05:00"}}}'
-  recorded_at: Fri, 10 May 2024 15:31:24 GMT
+  recorded_at: Tue, 14 May 2024 15:07:06 GMT
 - request:
     method: post
     uri: http://localhost:8000/
     body:
       encoding: UTF-8
-      string: '{"TableName":"subscriptions","IndexName":"car_id_index","KeyConditionExpression":"#car_id
-        = :car_id","ExpressionAttributeNames":{"#car_id":"car_id"},"ExpressionAttributeValues":{":car_id":{"S":"UVX455"}},"Limit":1}'
+      string: '{"TableName":"fleteo-v2-cars-users","KeyConditionExpression":"#car_id
+        = :car_id","ExpressionAttributeNames":{"#car_id":"car_id"},"ExpressionAttributeValues":{":car_id":{"S":"UVX455"}}}'
     headers:
       Accept-Encoding:
       - ''
@@ -71,15 +71,15 @@ http_interactions:
       Host:
       - localhost:8000
       X-Amz-Date:
-      - 20240510T153124Z
+      - 20240514T150706Z
       X-Amz-Content-Sha256:
-      - a8ff850c4aeb9c9af304ba26c2cdbd7da707db1921602173d7d3d4d6c17fd101
+      - cace0a22d92863fee1a25aaedd2a1d186e28b09ab69c98bf43ee1e5d1e62dc78
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=key/20240510/us-east-1/dynamodb/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=key/20240514/us-east-1/dynamodb/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=5b17cf94981747e27477a2e746af96998ae6648b22986d06995737020d9de8b6
+        Signature=6b998e974e0b175cfef3301240167228ee4674b99364e0b3d6689914d7582a00
       Content-Length:
-      - '214'
+      - '184'
       Accept:
       - "*/*"
   response:
@@ -88,27 +88,27 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 10 May 2024 15:31:24 GMT
+      - Tue, 14 May 2024 15:07:06 GMT
       X-Amzn-Requestid:
-      - 6b579265-07a9-4be1-913c-533ed443fbb1
+      - 5105fec4-4f2d-495f-b7fd-1e4e77d422eb
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Crc32:
-      - '3624557612'
+      - '1919856377'
       Content-Length:
-      - '185'
+      - '102'
       Server:
       - Jetty(11.0.17)
     body:
       encoding: UTF-8
-      string: '{"Items":[{"car_id":{"S":"UVX455"},"user_id":{"S":"hguzman10@gmail.com"},"id":{"S":"ASDFG"}}],"Count":1,"ScannedCount":1,"LastEvaluatedKey":{"car_id":{"S":"UVX455"},"id":{"S":"ASDFG"}}}'
-  recorded_at: Fri, 10 May 2024 15:31:24 GMT
+      string: '{"Items":[{"user_id":{"S":"hguzman10@gmail.com"},"car_id":{"S":"UVX455"}}],"Count":1,"ScannedCount":1}'
+  recorded_at: Tue, 14 May 2024 15:07:06 GMT
 - request:
     method: post
     uri: http://localhost:8000/
     body:
       encoding: UTF-8
-      string: '{"TableName":"users","Key":{"id":{"S":"hguzman10@gmail.com"}}}'
+      string: '{"TableName":"fleteo-v2-users","Key":{"id":{"S":"hguzman10@gmail.com"}}}'
     headers:
       Accept-Encoding:
       - ''
@@ -122,15 +122,15 @@ http_interactions:
       Host:
       - localhost:8000
       X-Amz-Date:
-      - 20240510T153124Z
+      - 20240514T150706Z
       X-Amz-Content-Sha256:
-      - 7e2248df156bd85d1c08add1aaa7b84ed6041fe96165fb6879ddbb1424663802
+      - ab20f394f9f17ab85359c8cef098ff2e93991ca4f4f9402376eaa33ea97d5545
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=key/20240510/us-east-1/dynamodb/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=key/20240514/us-east-1/dynamodb/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=148c8308f7139ad29b0c868b5c835044c7247c54a39347e603514301bca0dc42
+        Signature=7a77ca70c4490290987c8cc9c0c7d5828f710adb74e54e0308318765d6cb0bff
       Content-Length:
-      - '62'
+      - '72'
       Accept:
       - "*/*"
   response:
@@ -139,9 +139,9 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 10 May 2024 15:31:24 GMT
+      - Tue, 14 May 2024 15:07:06 GMT
       X-Amzn-Requestid:
-      - f619c0fb-46a2-4016-a59f-749d48435612
+      - 89bd60ea-9f8f-4e3f-ab76-4a895bb5eb39
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Crc32:
@@ -153,5 +153,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"Item":{"created_at":{"S":"2024-05-07T14:10:09-05:00"},"id":{"S":"hguzman10@gmail.com"},"balance":{"N":"0"},"updated_at":{"S":"2024-05-07T14:10:09-05:00"}}}'
-  recorded_at: Fri, 10 May 2024 15:31:24 GMT
+  recorded_at: Tue, 14 May 2024 15:07:06 GMT
 recorded_with: VCR 6.2.0

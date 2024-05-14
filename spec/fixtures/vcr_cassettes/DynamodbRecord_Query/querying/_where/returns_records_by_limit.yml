@@ -5,7 +5,7 @@ http_interactions:
     uri: http://localhost:8000/
     body:
       encoding: UTF-8
-      string: '{"TableName":"users","Limit":1,"ExpressionAttributeNames":{"#balance":"balance"},"ExpressionAttributeValues":{":balance":{"N":"0"}},"FilterExpression":"#balance
+      string: '{"TableName":"fleteo-v2-users","Limit":1,"ExpressionAttributeNames":{"#balance":"balance"},"ExpressionAttributeValues":{":balance":{"N":"0"}},"FilterExpression":"#balance
         = :balance"}'
     headers:
       Accept-Encoding:
@@ -20,15 +20,15 @@ http_interactions:
       Host:
       - localhost:8000
       X-Amz-Date:
-      - 20240502T230053Z
+      - 20240514T153259Z
       X-Amz-Content-Sha256:
-      - 3251e11bdd19fdce2e7d146498b881bbbc65f57b12aa6ad4cb1443d5cda934f1
+      - 4a817ea4a9315bf50e176703f307eb0ecd51182faecce44db7fbc3456b7b810b
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=AKIAV3OBKSDM5UO5PK5A/20240502/us-east-1/dynamodb/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=key/20240514/us-east-1/dynamodb/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=d4e6a9939d2f6d6a3de5d87294a73e1d5a18160524ef4a01c4c562777a21bc23
+        Signature=3b0bee5c42907ed6f8c46535d5979012b376c30597ae870b6a29a63713a9ddf5
       Content-Length:
-      - '173'
+      - '183'
       Accept:
       - "*/*"
   response:
@@ -37,19 +37,19 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 02 May 2024 23:00:53 GMT
+      - Tue, 14 May 2024 15:32:59 GMT
       X-Amzn-Requestid:
-      - f4c8a18f-9421-41e1-82e0-084fda5e62d9
+      - 9df141bf-61b8-4255-bf5c-3f567a0adbe2
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Crc32:
-      - '2270305145'
+      - '599331903'
       Content-Length:
-      - '165'
+      - '147'
       Server:
       - Jetty(11.0.17)
     body:
       encoding: UTF-8
-      string: '{"Items":[{"balance":{"N":"0"},"token":{"N":"0"},"id":{"S":"hguzman20@gmail.com"}}],"Count":1,"ScannedCount":1,"LastEvaluatedKey":{"id":{"S":"hguzman20@gmail.com"}}}'
-  recorded_at: Thu, 02 May 2024 23:00:53 GMT
+      string: '{"Items":[{"balance":{"N":"0"},"id":{"S":"hguzman20@gmail.com"}}],"Count":1,"ScannedCount":1,"LastEvaluatedKey":{"id":{"S":"hguzman20@gmail.com"}}}'
+  recorded_at: Tue, 14 May 2024 15:32:59 GMT
 recorded_with: VCR 6.2.0

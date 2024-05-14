@@ -19,15 +19,15 @@ module DynamodbRecord
       def has_many(associations)
         base_model = to_s.downcase
         model = associations.to_s.chop
-        # field = self.class.to_s.downcase
-        table = Config.namespace ? "#{Config.namespace}-#{associations}" : associations
-
-        options = {table_name: table}
-        options.merge!(key_condition_expression: "##{base_model}_id = :#{base_model}_id")
-        options.merge!(expression_attribute_names: {"##{base_model}_id": "#{base_model}_id"})
-        options.merge!(index_name: "#{base_model}_id_index")
 
         define_method(associations) do
+          table = Config.namespace ? "#{Config.namespace}-#{associations}" : associations
+
+          options = {table_name: table}
+          options.merge!(key_condition_expression: "##{base_model}_id = :#{base_model}_id")
+          options.merge!(expression_attribute_names: {"##{base_model}_id": "#{base_model}_id"})
+          options.merge!(index_name: "#{base_model}_id_index")
+
           options.merge!(expression_attribute_values: {":#{base_model}_id" => id})
           klass = Object.const_get(model.capitalize)
           query = QueryPager.new(options, klass)
@@ -44,16 +44,16 @@ module DynamodbRecord
         sorted_list = list.sort
         options = {table_name: table.to_s}
 
-        field = if sorted_list.first == base_model
-                  sorted_list.first
-                else
-                  sorted_list.last
-                end
-        options.merge!(index_name: "#{field}_id_index")
-        options.merge!(key_condition_expression: "##{field}_id = :#{field}_id")
-        options.merge!(expression_attribute_names: {"##{field}_id": "#{field}_id"})
-
         define_method(associations) do
+          field = if sorted_list.first == base_model
+                    sorted_list.first
+                  else
+                    sorted_list.last
+                  end
+          options.merge!(index_name: "#{field}_id_index")
+          options.merge!(key_condition_expression: "##{field}_id = :#{field}_id")
+          options.merge!(expression_attribute_names: {"##{field}_id": "#{field}_id"})
+
           options.merge!(expression_attribute_values: {":#{field}_id" => id})
           # p options
 
@@ -75,22 +75,22 @@ module DynamodbRecord
         list << base_model
         list << relation_model
         sorted_list = list.sort
-        options = {}
-        pluralize_name = sorted_list.map(&:pluralize).join('-')
-
-        table = Config.namespace ? "#{Config.namespace}-#{pluralize_name}" : pluralize_name
-        options[:table_name] = table
-        if sorted_list.first == base_model
-          field = sorted_list.first
-        else
-          field = sorted_list.last
-          options.merge!(index_name: "#{table}-index")
-        end
-
-        options.merge!(key_condition_expression: "##{field}_id = :#{field}_id")
-        options.merge!(expression_attribute_names: {"##{field}_id": "#{field}_id"})
 
         define_method(associations) do
+          options = {}
+          pluralize_name = sorted_list.map(&:pluralize).join('-')
+          table = Config.namespace ? "#{Config.namespace}-#{pluralize_name}" : pluralize_name
+          options[:table_name] = table
+          if sorted_list.first == base_model
+            field = sorted_list.first
+          else
+            field = sorted_list.last
+            options.merge!(index_name: "#{table}-index")
+          end
+
+          options.merge!(key_condition_expression: "##{field}_id = :#{field}_id")
+          options.merge!(expression_attribute_names: {"##{field}_id": "#{field}_id"})
+
           options.merge!(expression_attribute_values: {":#{field}_id" => id})
 
           klass = Object.const_get(relation_model.capitalize)

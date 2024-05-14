@@ -40,6 +40,7 @@ module DynamodbRecord
         options.merge!(filter_expression:) if filter_expression.present?
 
         options.merge!(exclusive_start_key:) if exclusive_start_key
+        # p options
 
         scan_pager = ScanPager.new(options, self)
         Collection.new(scan_pager, self)

@@ -5,7 +5,7 @@ http_interactions:
     uri: http://localhost:8000/
     body:
       encoding: UTF-8
-      string: '{"TableName":"users","ConditionExpression":"id <> :s","ExpressionAttributeValues":{":s":{"S":"hguzman10@gmail.com"}},"Item":{"balance":{"N":"0"},"id":{"S":"hguzman10@gmail.com"},"created_at":{"S":"2024-05-01T19:36:43-05:00"},"updated_at":{"S":"2024-05-01T19:36:43-05:00"}}}'
+      string: '{"TableName":"fleteo-v2-users","ConditionExpression":"id <> :s","ExpressionAttributeValues":{":s":{"S":"hguzman60@gmail.com"}},"Item":{"balance":{"N":"0"},"id":{"S":"hguzman60@gmail.com"},"created_at":{"S":"2024-05-14T10:18:09-05:00"},"updated_at":{"S":"2024-05-14T10:18:09-05:00"}}}'
     headers:
       Accept-Encoding:
       - ''
@@ -19,15 +19,15 @@ http_interactions:
       Host:
       - localhost:8000
       X-Amz-Date:
-      - 20240502T003643Z
+      - 20240514T151809Z
       X-Amz-Content-Sha256:
-      - a6814143d7653f7f2d9abb6d2cf7c7b12ba0b621092b359971c44569d1bc2778
+      - c8532d0cba700fe300f94896fa7a2d11f20c2523a88a2be0c5f814f80b5943b2
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=AKIAV3OBKSDM5UO5PK5A/20240502/us-east-1/dynamodb/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=key/20240514/us-east-1/dynamodb/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=28275abed7119af00065965863f46b56a8f8db07e4ac789d86411f1f2c44155c
+        Signature=46898352f8a1cf36f91cd9ea16227c6f899803b4be824c316f2d2b98b69fa82c
       Content-Length:
-      - '273'
+      - '283'
       Accept:
       - "*/*"
   response:
@@ -36,9 +36,9 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 02 May 2024 00:36:43 GMT
+      - Tue, 14 May 2024 15:18:09 GMT
       X-Amzn-Requestid:
-      - c07e3cbf-e2be-4eb3-afb6-dad85bcdbe3f
+      - da9a8a2e-edd9-4fad-9511-97b8c989c11e
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Crc32:
@@ -50,5 +50,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "{}"
-  recorded_at: Thu, 02 May 2024 00:36:43 GMT
+  recorded_at: Tue, 14 May 2024 15:18:09 GMT
 recorded_with: VCR 6.2.0

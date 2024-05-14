@@ -16,7 +16,6 @@ module DynamodbRecord
         key = {}
         key[hash_key] = id
         key[self.range_key] = range_key if self.range_key
-
         response = client.get_item(
           table_name:,
           key:

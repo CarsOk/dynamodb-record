@@ -6,8 +6,8 @@ RSpec.describe DynamodbRecord::Query, :vcr do
   describe '#all' do
     it 'find all records' do
       user = User.all
-      expect(user.count).to eq(1)
-      expect(user.map(&:id)).to eq(['hguzman20@gmail.com'])
+      expect(user.count).to eq(2)
+      expect(user.map(&:id)).to eq(['hguzman20@gmail.com', 'hguzman30@gmail.com'])
     end
   end
   describe 'querying' do

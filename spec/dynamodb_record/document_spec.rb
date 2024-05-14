@@ -12,10 +12,10 @@ RSpec.describe DynamodbRecord::Document do
     expect(person.attributes).to be_empty
   end
 
-  # it 'initializes from database', :vcr do
-  #   user = User.find('hguzman10@gmail.com')
-  #   expect(user.new_record).to be_falsy
-  # end
+  it 'initializes from database', :vcr do
+    user = User.find('hguzman20@gmail.com')
+    expect(user.new_record).to be_falsy
+  end
 
   it 'raises error on unknown field' do
     expect { User.new({unknown_field: 'unknown'}) }.to raise_error(NoMethodError)

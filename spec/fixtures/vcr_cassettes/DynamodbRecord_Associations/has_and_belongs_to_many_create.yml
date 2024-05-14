@@ -5,7 +5,7 @@ http_interactions:
     uri: http://localhost:8000/
     body:
       encoding: UTF-8
-      string: '{"TableName":"cars","Key":{"id":{"S":"UVX455"}}}'
+      string: '{"TableName":"fleteo-v2-cars","Key":{"id":{"S":"UVX455"}}}'
     headers:
       Accept-Encoding:
       - ''
@@ -19,15 +19,15 @@ http_interactions:
       Host:
       - localhost:8000
       X-Amz-Date:
-      - 20240511T165334Z
+      - 20240514T150857Z
       X-Amz-Content-Sha256:
-      - 53644a2bbab903704867eb87df0fdfe6dd8cb8ac9e1dae5715033d0f636fd592
+      - 3f40080fdb7ac1732232c14b86645a9ffbd3f94cf8ecda6b3c584d105288bb8d
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=key/20240511/us-east-1/dynamodb/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=key/20240514/us-east-1/dynamodb/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=945141506a3d03f5dfa8197ade25fc065c72852f9f59020adef19232dbae1c48
+        Signature=7b342a18382670246dd411ab6773fb2c99478d532b07d554e20c6212c0f9bc89
       Content-Length:
-      - '48'
+      - '58'
       Accept:
       - "*/*"
   response:
@@ -36,9 +36,9 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 11 May 2024 16:53:34 GMT
+      - Tue, 14 May 2024 15:08:57 GMT
       X-Amzn-Requestid:
-      - cde0b341-e90d-4e78-b952-839a7959422d
+      - 4d417ee2-ef68-41f9-a96a-b494f7aa75e8
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Crc32:
@@ -50,13 +50,14 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"Item":{"marca":{"S":"Chvrolet"},"created_at":{"S":"2024-05-07T14:09:25-05:00"},"id":{"S":"UVX455"},"updated_at":{"S":"2024-05-07T14:09:25-05:00"}}}'
-  recorded_at: Sat, 11 May 2024 16:53:34 GMT
+  recorded_at: Tue, 14 May 2024 15:08:57 GMT
 - request:
     method: post
     uri: http://localhost:8000/
     body:
       encoding: UTF-8
-      string: '{"TableName":"cars-users","KeyConditionExpression":"#car_id = :car_id","ExpressionAttributeNames":{"#car_id":"car_id"},"ExpressionAttributeValues":{":car_id":{"S":"UVX455"}}}'
+      string: '{"TableName":"fleteo-v2-cars-users","KeyConditionExpression":"#car_id
+        = :car_id","ExpressionAttributeNames":{"#car_id":"car_id"},"ExpressionAttributeValues":{":car_id":{"S":"UVX455"}}}'
     headers:
       Accept-Encoding:
       - ''
@@ -70,15 +71,15 @@ http_interactions:
       Host:
       - localhost:8000
       X-Amz-Date:
-      - 20240511T165334Z
+      - 20240514T150857Z
       X-Amz-Content-Sha256:
-      - c5afaee6670f0bb8de80a62d934db1175d05a20c9f56b1cd58397a6e6124f3e9
+      - cace0a22d92863fee1a25aaedd2a1d186e28b09ab69c98bf43ee1e5d1e62dc78
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=key/20240511/us-east-1/dynamodb/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=key/20240514/us-east-1/dynamodb/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=2ab37eed9aeff2704d9233edb66f8744c8c64d1b2afe6ec6eef864f4ef5850b7
+        Signature=061e838c38387334ef4c00e006a3277a10a1a6bcf05a52d33366e52ca09e0fe5
       Content-Length:
-      - '174'
+      - '184'
       Accept:
       - "*/*"
   response:
@@ -87,27 +88,78 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 11 May 2024 16:53:34 GMT
+      - Tue, 14 May 2024 15:08:57 GMT
       X-Amzn-Requestid:
-      - 918896f7-6570-4d53-91b4-b316fb1d1e72
+      - 928a6943-b6c4-4a19-845a-1f89e3ed11c5
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Crc32:
-      - '583912891'
+      - '1919856377'
       Content-Length:
-      - '39'
+      - '102'
       Server:
       - Jetty(11.0.17)
     body:
       encoding: UTF-8
-      string: '{"Items":[],"Count":0,"ScannedCount":0}'
-  recorded_at: Sat, 11 May 2024 16:53:34 GMT
+      string: '{"Items":[{"user_id":{"S":"hguzman10@gmail.com"},"car_id":{"S":"UVX455"}}],"Count":1,"ScannedCount":1}'
+  recorded_at: Tue, 14 May 2024 15:08:57 GMT
 - request:
     method: post
     uri: http://localhost:8000/
     body:
       encoding: UTF-8
-      string: '{"TableName":"users","Item":{"balance":{"N":"0"},"id":{"S":"hguzman50@gmail.com"},"created_at":{"S":"2024-05-11T11:53:34-05:00"},"updated_at":{"S":"2024-05-11T11:53:34-05:00"}}}'
+      string: '{"TableName":"fleteo-v2-users","Key":{"id":{"S":"hguzman10@gmail.com"}}}'
+    headers:
+      Accept-Encoding:
+      - ''
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Target:
+      - DynamoDB_20120810.GetItem
+      User-Agent:
+      - aws-sdk-ruby3/3.191.3 ua/2.0 api/dynamodb#1.105.0 os/macos#20 md/x86_64 lang/ruby#3.2.3
+        md/3.2.3 cfg/retry-mode#legacy
+      Host:
+      - localhost:8000
+      X-Amz-Date:
+      - 20240514T150857Z
+      X-Amz-Content-Sha256:
+      - ab20f394f9f17ab85359c8cef098ff2e93991ca4f4f9402376eaa33ea97d5545
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=key/20240514/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=91872537c56776cac01ca40cb64b82fcde77bb64b8b3dd1b4e698e0c1225f847
+      Content-Length:
+      - '72'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 14 May 2024 15:08:57 GMT
+      X-Amzn-Requestid:
+      - 5b8bed75-6639-42a2-822a-df4697c22953
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Crc32:
+      - '3262869781'
+      Content-Length:
+      - '157'
+      Server:
+      - Jetty(11.0.17)
+    body:
+      encoding: UTF-8
+      string: '{"Item":{"created_at":{"S":"2024-05-07T14:10:09-05:00"},"id":{"S":"hguzman10@gmail.com"},"balance":{"N":"0"},"updated_at":{"S":"2024-05-07T14:10:09-05:00"}}}'
+  recorded_at: Tue, 14 May 2024 15:08:57 GMT
+- request:
+    method: post
+    uri: http://localhost:8000/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"fleteo-v2-users","Item":{"balance":{"N":"0"},"id":{"S":"hguzman50@gmail.com"},"created_at":{"S":"2024-05-14T10:08:57-05:00"},"updated_at":{"S":"2024-05-14T10:08:57-05:00"}}}'
     headers:
       Accept-Encoding:
       - ''
@@ -121,15 +173,15 @@ http_interactions:
       Host:
       - localhost:8000
       X-Amz-Date:
-      - 20240511T165334Z
+      - 20240514T150857Z
       X-Amz-Content-Sha256:
-      - 42291efb1996f6031a9903c6046f07ce33adaeb5a12f83063cf032a351fddf02
+      - 3ad6c8463801ae079ca7f7ec94c2e2a791d16e713a736cd9f11ed3e219ea0964
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=key/20240511/us-east-1/dynamodb/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=key/20240514/us-east-1/dynamodb/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=ce88618157742bd045cb950a6fc2db03eaf92146ee78ea0bf0248f00bc2b5f58
+        Signature=27d7745ec37b37e7c19b8baf1cf88045f0e95b7f51e0ffed8862f8e3e0db36c5
       Content-Length:
-      - '177'
+      - '187'
       Accept:
       - "*/*"
   response:
@@ -138,9 +190,9 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 11 May 2024 16:53:34 GMT
+      - Tue, 14 May 2024 15:08:57 GMT
       X-Amzn-Requestid:
-      - fe894c17-9a00-4c07-9a62-5bed6428e87e
+      - 0ba821b4-96b4-4f07-a4fe-63ee94603d94
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Crc32:
@@ -152,13 +204,13 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "{}"
-  recorded_at: Sat, 11 May 2024 16:53:34 GMT
+  recorded_at: Tue, 14 May 2024 15:08:57 GMT
 - request:
     method: post
     uri: http://localhost:8000/
     body:
       encoding: UTF-8
-      string: '{"TableName":"cars-users","Item":{"car_id":{"S":"UVX455"},"user_id":{"S":"hguzman50@gmail.com"}}}'
+      string: '{"TableName":"fleteo-v2-cars-users","Item":{"car_id":{"S":"UVX455"},"user_id":{"S":"hguzman50@gmail.com"}}}'
     headers:
       Accept-Encoding:
       - ''
@@ -172,15 +224,15 @@ http_interactions:
       Host:
       - localhost:8000
       X-Amz-Date:
-      - 20240511T165334Z
+      - 20240514T150857Z
       X-Amz-Content-Sha256:
-      - 574742e460f05d07e61a96fe7cac4b815543db8f5aa10409003bbfe4bda5ee76
+      - d5b220f0a13a3cedb9b4d4b1eb2b48b14c66738be9e9690a12290e570ad3262d
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=key/20240511/us-east-1/dynamodb/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=key/20240514/us-east-1/dynamodb/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=1b0e6aa6d5579f630e75b404b1fa404b10779a1f191d0309c269b5a7ec0aaef2
+        Signature=4daab6481522dc81dc65d32bd749ac3e60d3577b28344b1b463eb473c7d1e718
       Content-Length:
-      - '97'
+      - '107'
       Accept:
       - "*/*"
   response:
@@ -189,9 +241,9 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 11 May 2024 16:53:34 GMT
+      - Tue, 14 May 2024 15:08:57 GMT
       X-Amzn-Requestid:
-      - c735d39e-5650-4e6c-b111-8cbcfb001c75
+      - 43c4093e-afb1-4ba1-a57a-2d1d75fb1580
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Crc32:
@@ -203,5 +255,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "{}"
-  recorded_at: Sat, 11 May 2024 16:53:34 GMT
+  recorded_at: Tue, 14 May 2024 15:08:57 GMT
 recorded_with: VCR 6.2.0

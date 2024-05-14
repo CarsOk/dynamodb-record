@@ -5,7 +5,7 @@ http_interactions:
     uri: http://localhost:8000/
     body:
       encoding: UTF-8
-      string: '{"TableName":"users","Key":{"id":{"S":"hguzman10@gmail.com"}}}'
+      string: '{"TableName":"fleteo-v2-users","Key":{"id":{"S":"hguzman20@gmail.com"}}}'
     headers:
       Accept-Encoding:
       - ''
@@ -19,15 +19,15 @@ http_interactions:
       Host:
       - localhost:8000
       X-Amz-Date:
-      - 20240418T230852Z
+      - 20240514T153526Z
       X-Amz-Content-Sha256:
-      - 7e2248df156bd85d1c08add1aaa7b84ed6041fe96165fb6879ddbb1424663802
+      - 5f6498b172f2373775918f917bdbc8930eb585a92f1b57dbb3dd69c47e145a0d
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=AKIAV3OBKSDM5UO5PK5A/20240418/us-east-1/dynamodb/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=key/20240514/us-east-1/dynamodb/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=a6e8d3a4fbfcc98091bff89a3d492337c072c486ea0a1d05c6ee45d69ff0834f
+        Signature=fe7365ca88b1015daeeb7c096fb704897dbd12c1894c65e5ddadf047ee44bc58
       Content-Length:
-      - '62'
+      - '72'
       Accept:
       - "*/*"
   response:
@@ -36,19 +36,19 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 18 Apr 2024 23:08:52 GMT
+      - Tue, 14 May 2024 15:35:26 GMT
       X-Amzn-Requestid:
-      - 2905a9b7-87da-494c-ba16-3d26a0e3df6b
+      - 6b122f1f-4056-4df0-a81e-647d952e093d
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Crc32:
-      - '3745271733'
+      - '4143250247'
       Content-Length:
       - '63'
       Server:
       - Jetty(11.0.17)
     body:
       encoding: UTF-8
-      string: '{"Item":{"balance":{"N":"0"},"id":{"S":"hguzman10@gmail.com"}}}'
-  recorded_at: Thu, 18 Apr 2024 23:08:52 GMT
+      string: '{"Item":{"balance":{"N":"0"},"id":{"S":"hguzman20@gmail.com"}}}'
+  recorded_at: Tue, 14 May 2024 15:35:26 GMT
 recorded_with: VCR 6.2.0
