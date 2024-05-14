@@ -70,7 +70,7 @@ module DynamodbRecord
 
       def has_and_belongs_to_many(associations)
         base_model = to_s.downcase.split('::').last
-        relation_model = associations.to_s.chop
+        relation_model = associations.to_s.singularize
         list = []
         list << base_model
         list << relation_model
