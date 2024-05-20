@@ -45,9 +45,25 @@ module DynamodbRecord
       table_name = @options[:table_name]
       item = @options[:expression_attribute_values].transform_keys { |k| k.delete_prefix(':').to_sym }
       item[:"#{@base_model}_id"] = object.id
+      item[:created_at] = DateTime.now.to_s
       key = {table_name:, item:}
-      @klass.client.put_item(key)
-      @items << object
+
+      res = @items.none? { |data| data.id == object.id }
+      if res
+        @klass.client.put_item(key)
+        @items << object
+      end
+      @items
+    end
+
+    def destroy(object)
+      table_name = @options[:table_name]
+      item = @options[:expression_attribute_values].transform_keys { |k| k.delete_prefix(':').to_sym }
+      item[:"#{@base_model}_id"] = object.id
+      key = {table_name:, key: item}
+      @klass.client.delete_item(key)
+      @items.delete_if { |data| data.id == object.id }
+      object
     end
 
     def create!(params = {})
@@ -59,6 +75,7 @@ module DynamodbRecord
       item = @options[:expression_attribute_values].transform_keys { |k| k.delete_prefix(':').to_sym }
 
       item[:"#{@klass.to_s.downcase}_id"] = object.id
+      item[:created_at] = DateTime.now.to_s
       key = {table_name:, item:}
       @klass.client.put_item(key)
       object

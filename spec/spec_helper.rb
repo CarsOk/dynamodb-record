@@ -22,4 +22,3 @@ VCR.configure do |c|
   c.default_cassette_options = {match_requests_on: %i[method uri]}
   # c.default_cassette_options = { match_requests_on: %i[method uri body] }
 end
-

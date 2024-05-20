@@ -77,29 +77,31 @@ module DynamodbRecord
         sorted_list = list.sort
 
         define_method(associations) do
-          options = {}
-          pluralize_name = sorted_list.map(&:pluralize).join('-')
-          table = Config.namespace ? "#{Config.namespace}-#{pluralize_name}" : pluralize_name
-          options[:table_name] = table
-          if sorted_list.first == base_model
-            field = sorted_list.first
+          if @collection.nil?
+            options = {}
+            pluralize_name = sorted_list.map(&:pluralize).join('-')
+            table = Config.namespace ? "#{Config.namespace}-#{pluralize_name}" : pluralize_name
+            options[:table_name] = table
+            if sorted_list.first == base_model
+              field = sorted_list.first
+            else
+              field = sorted_list.last
+              options.merge!(index_name: "#{table}-index")
+            end
+
+            options.merge!(key_condition_expression: "##{field}_id = :#{field}_id")
+            options.merge!(expression_attribute_names: {"##{field}_id": "#{field}_id"})
+
+            options.merge!(expression_attribute_values: {":#{field}_id" => id})
+
+            klass = Object.const_get(relation_model.capitalize)
+            # options.merge!(limit: 1)
+            # p options
+            query = QueryPager.new(options, klass)
+            @collection = HasAndBelongsToManyCollection.new(query, self)
           else
-            field = sorted_list.last
-            options.merge!(index_name: "#{table}-index")
+            @collection
           end
-
-          options.merge!(key_condition_expression: "##{field}_id = :#{field}_id")
-          options.merge!(expression_attribute_names: {"##{field}_id": "#{field}_id"})
-
-          options.merge!(expression_attribute_values: {":#{field}_id" => id})
-
-          klass = Object.const_get(relation_model.capitalize)
-
-          # options.merge!(limit: 1)
-          # p options
-
-          query = QueryPager.new(options, klass)
-          HasAndBelongsToManyCollection.new(query, self)
         end
       end
       # rubocop:enable Naming/PredicateName

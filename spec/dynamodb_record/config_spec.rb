@@ -1,7 +1,6 @@
 require_relative '../spec_helper'
 
 RSpec.describe DynamodbRecord::Config, :vcr do
-
   after do
     DynamodbRecord::Config.set_defaults
   end

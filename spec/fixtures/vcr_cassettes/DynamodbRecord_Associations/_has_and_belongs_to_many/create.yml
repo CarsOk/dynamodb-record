@@ -14,18 +14,18 @@ http_interactions:
       X-Amz-Target:
       - DynamoDB_20120810.GetItem
       User-Agent:
-      - aws-sdk-ruby3/3.191.3 ua/2.0 api/dynamodb#1.105.0 os/macos#20 md/x86_64 lang/ruby#3.2.3
+      - aws-sdk-ruby3/3.191.6 ua/2.0 api/dynamodb#1.106.0 os/macos#20 md/x86_64 lang/ruby#3.2.3
         md/3.2.3 cfg/retry-mode#legacy
       Host:
       - localhost:8000
       X-Amz-Date:
-      - 20240514T150857Z
+      - 20240520T003542Z
       X-Amz-Content-Sha256:
       - 3f40080fdb7ac1732232c14b86645a9ffbd3f94cf8ecda6b3c584d105288bb8d
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=key/20240514/us-east-1/dynamodb/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=key/20240520/us-east-1/dynamodb/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=7b342a18382670246dd411ab6773fb2c99478d532b07d554e20c6212c0f9bc89
+        Signature=e290166c48b3a82f6c90fa7def3044bf3e38387ef56024156d0345dc650783f3
       Content-Length:
       - '58'
       Accept:
@@ -36,9 +36,9 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 14 May 2024 15:08:57 GMT
+      - Mon, 20 May 2024 00:35:42 GMT
       X-Amzn-Requestid:
-      - 4d417ee2-ef68-41f9-a96a-b494f7aa75e8
+      - 2a10dee7-9021-4f40-bdea-21da5594c80c
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Crc32:
@@ -50,7 +50,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"Item":{"marca":{"S":"Chvrolet"},"created_at":{"S":"2024-05-07T14:09:25-05:00"},"id":{"S":"UVX455"},"updated_at":{"S":"2024-05-07T14:09:25-05:00"}}}'
-  recorded_at: Tue, 14 May 2024 15:08:57 GMT
+  recorded_at: Mon, 20 May 2024 00:35:42 GMT
 - request:
     method: post
     uri: http://localhost:8000/
@@ -66,18 +66,18 @@ http_interactions:
       X-Amz-Target:
       - DynamoDB_20120810.Query
       User-Agent:
-      - aws-sdk-ruby3/3.191.3 ua/2.0 api/dynamodb#1.105.0 os/macos#20 md/x86_64 lang/ruby#3.2.3
+      - aws-sdk-ruby3/3.191.6 ua/2.0 api/dynamodb#1.106.0 os/macos#20 md/x86_64 lang/ruby#3.2.3
         md/3.2.3 cfg/retry-mode#legacy
       Host:
       - localhost:8000
       X-Amz-Date:
-      - 20240514T150857Z
+      - 20240520T003542Z
       X-Amz-Content-Sha256:
       - cace0a22d92863fee1a25aaedd2a1d186e28b09ab69c98bf43ee1e5d1e62dc78
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=key/20240514/us-east-1/dynamodb/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=key/20240520/us-east-1/dynamodb/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=061e838c38387334ef4c00e006a3277a10a1a6bcf05a52d33366e52ca09e0fe5
+        Signature=13d89cfb1a3c3246bb72eac363f307b42965945af3986cab6fd7414ea4fb25df
       Content-Length:
       - '184'
       Accept:
@@ -88,21 +88,21 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 14 May 2024 15:08:57 GMT
+      - Mon, 20 May 2024 00:35:42 GMT
       X-Amzn-Requestid:
-      - 928a6943-b6c4-4a19-845a-1f89e3ed11c5
+      - c9c00b02-5bb0-4423-9249-899ccdfacfc9
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Crc32:
-      - '1919856377'
+      - '2919407285'
       Content-Length:
-      - '102'
+      - '213'
       Server:
       - Jetty(11.0.17)
     body:
       encoding: UTF-8
-      string: '{"Items":[{"user_id":{"S":"hguzman10@gmail.com"},"car_id":{"S":"UVX455"}}],"Count":1,"ScannedCount":1}'
-  recorded_at: Tue, 14 May 2024 15:08:57 GMT
+      string: '{"Items":[{"user_id":{"S":"hguzman10@gmail.com"},"car_id":{"S":"UVX455"},"created_at":{"S":"2024-05-19T19:14:10-05:00"}},{"user_id":{"S":"hguzman30@gmail.com"},"car_id":{"S":"UVX455"}}],"Count":2,"ScannedCount":2}'
+  recorded_at: Mon, 20 May 2024 00:35:42 GMT
 - request:
     method: post
     uri: http://localhost:8000/
@@ -117,18 +117,18 @@ http_interactions:
       X-Amz-Target:
       - DynamoDB_20120810.GetItem
       User-Agent:
-      - aws-sdk-ruby3/3.191.3 ua/2.0 api/dynamodb#1.105.0 os/macos#20 md/x86_64 lang/ruby#3.2.3
+      - aws-sdk-ruby3/3.191.6 ua/2.0 api/dynamodb#1.106.0 os/macos#20 md/x86_64 lang/ruby#3.2.3
         md/3.2.3 cfg/retry-mode#legacy
       Host:
       - localhost:8000
       X-Amz-Date:
-      - 20240514T150857Z
+      - 20240520T003542Z
       X-Amz-Content-Sha256:
       - ab20f394f9f17ab85359c8cef098ff2e93991ca4f4f9402376eaa33ea97d5545
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=key/20240514/us-east-1/dynamodb/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=key/20240520/us-east-1/dynamodb/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=91872537c56776cac01ca40cb64b82fcde77bb64b8b3dd1b4e698e0c1225f847
+        Signature=f111a1c527e261480f45793ecc8a675ed8d09fae81a188d3a758ce3a719c53b7
       Content-Length:
       - '72'
       Accept:
@@ -139,27 +139,78 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 14 May 2024 15:08:57 GMT
+      - Mon, 20 May 2024 00:35:42 GMT
       X-Amzn-Requestid:
-      - 5b8bed75-6639-42a2-822a-df4697c22953
+      - 4015f9f2-51f3-4643-8a33-124c9d6d1175
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Crc32:
-      - '3262869781'
+      - '2698900000'
+      Content-Length:
+      - '247'
+      Server:
+      - Jetty(11.0.17)
+    body:
+      encoding: UTF-8
+      string: '{"Item":{"code":{"N":"2133"},"balance":{"N":"10"},"updated_at":{"S":"2024-05-14T13:48:27-05:00"},"overdraft":{"N":"0"},"roles":{"L":[{"S":"admin"},{"S":"assitant"}]},"created_at":{"S":"2024-05-14T13:48:27-05:00"},"id":{"S":"hguzman10@gmail.com"}}}'
+  recorded_at: Mon, 20 May 2024 00:35:42 GMT
+- request:
+    method: post
+    uri: http://localhost:8000/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"fleteo-v2-users","Key":{"id":{"S":"hguzman30@gmail.com"}}}'
+    headers:
+      Accept-Encoding:
+      - ''
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Target:
+      - DynamoDB_20120810.GetItem
+      User-Agent:
+      - aws-sdk-ruby3/3.191.6 ua/2.0 api/dynamodb#1.106.0 os/macos#20 md/x86_64 lang/ruby#3.2.3
+        md/3.2.3 cfg/retry-mode#legacy
+      Host:
+      - localhost:8000
+      X-Amz-Date:
+      - 20240520T003542Z
+      X-Amz-Content-Sha256:
+      - a79dcb92885a84695d4b1862815eea675a96021cd0385eb31b4c9bd91074dd19
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=key/20240520/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=2d2da4ef48638ff5f344d1d5aa11334f7dff2c9a2d6ce7615bda85b932661523
+      Content-Length:
+      - '72'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 20 May 2024 00:35:42 GMT
+      X-Amzn-Requestid:
+      - 558bdb15-24eb-4d9a-8304-4f4abb641fe5
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Crc32:
+      - '941944394'
       Content-Length:
       - '157'
       Server:
       - Jetty(11.0.17)
     body:
       encoding: UTF-8
-      string: '{"Item":{"created_at":{"S":"2024-05-07T14:10:09-05:00"},"id":{"S":"hguzman10@gmail.com"},"balance":{"N":"0"},"updated_at":{"S":"2024-05-07T14:10:09-05:00"}}}'
-  recorded_at: Tue, 14 May 2024 15:08:57 GMT
+      string: '{"Item":{"created_at":{"S":"2024-05-08T12:22:30-05:00"},"id":{"S":"hguzman30@gmail.com"},"balance":{"N":"0"},"updated_at":{"S":"2024-05-08T12:22:30-05:00"}}}'
+  recorded_at: Mon, 20 May 2024 00:35:42 GMT
 - request:
     method: post
     uri: http://localhost:8000/
     body:
       encoding: UTF-8
-      string: '{"TableName":"fleteo-v2-users","Item":{"balance":{"N":"0"},"id":{"S":"hguzman50@gmail.com"},"created_at":{"S":"2024-05-14T10:08:57-05:00"},"updated_at":{"S":"2024-05-14T10:08:57-05:00"}}}'
+      string: '{"TableName":"fleteo-v2-users","Item":{"balance":{"N":"0"},"id":{"S":"hguzman50@gmail.com"},"created_at":{"S":"2024-05-19T19:35:42-05:00"},"updated_at":{"S":"2024-05-19T19:35:42-05:00"}}}'
     headers:
       Accept-Encoding:
       - ''
@@ -168,18 +219,18 @@ http_interactions:
       X-Amz-Target:
       - DynamoDB_20120810.PutItem
       User-Agent:
-      - aws-sdk-ruby3/3.191.3 ua/2.0 api/dynamodb#1.105.0 os/macos#20 md/x86_64 lang/ruby#3.2.3
+      - aws-sdk-ruby3/3.191.6 ua/2.0 api/dynamodb#1.106.0 os/macos#20 md/x86_64 lang/ruby#3.2.3
         md/3.2.3 cfg/retry-mode#legacy
       Host:
       - localhost:8000
       X-Amz-Date:
-      - 20240514T150857Z
+      - 20240520T003542Z
       X-Amz-Content-Sha256:
-      - 3ad6c8463801ae079ca7f7ec94c2e2a791d16e713a736cd9f11ed3e219ea0964
+      - 970aede97396ac2cba7508fff079b38ecf04c1638576b616ddfce6c6fa836f07
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=key/20240514/us-east-1/dynamodb/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=key/20240520/us-east-1/dynamodb/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=27d7745ec37b37e7c19b8baf1cf88045f0e95b7f51e0ffed8862f8e3e0db36c5
+        Signature=376962f4fdfcc2cd9c950f305823b247b8015c8f2cbd70c9501d9bca060d73f1
       Content-Length:
       - '187'
       Accept:
@@ -190,9 +241,9 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 14 May 2024 15:08:57 GMT
+      - Mon, 20 May 2024 00:35:42 GMT
       X-Amzn-Requestid:
-      - 0ba821b4-96b4-4f07-a4fe-63ee94603d94
+      - 1719b7cc-f1ef-4fba-ac84-77338c1d9997
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Crc32:
@@ -204,13 +255,13 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "{}"
-  recorded_at: Tue, 14 May 2024 15:08:57 GMT
+  recorded_at: Mon, 20 May 2024 00:35:42 GMT
 - request:
     method: post
     uri: http://localhost:8000/
     body:
       encoding: UTF-8
-      string: '{"TableName":"fleteo-v2-cars-users","Item":{"car_id":{"S":"UVX455"},"user_id":{"S":"hguzman50@gmail.com"}}}'
+      string: '{"TableName":"fleteo-v2-cars-users","Item":{"car_id":{"S":"UVX455"},"user_id":{"S":"hguzman50@gmail.com"},"created_at":{"S":"2024-05-19T19:35:42-05:00"}}}'
     headers:
       Accept-Encoding:
       - ''
@@ -219,20 +270,20 @@ http_interactions:
       X-Amz-Target:
       - DynamoDB_20120810.PutItem
       User-Agent:
-      - aws-sdk-ruby3/3.191.3 ua/2.0 api/dynamodb#1.105.0 os/macos#20 md/x86_64 lang/ruby#3.2.3
+      - aws-sdk-ruby3/3.191.6 ua/2.0 api/dynamodb#1.106.0 os/macos#20 md/x86_64 lang/ruby#3.2.3
         md/3.2.3 cfg/retry-mode#legacy
       Host:
       - localhost:8000
       X-Amz-Date:
-      - 20240514T150857Z
+      - 20240520T003542Z
       X-Amz-Content-Sha256:
-      - d5b220f0a13a3cedb9b4d4b1eb2b48b14c66738be9e9690a12290e570ad3262d
+      - e0fa19df10231bf2ec43fca85826fbf3e97470f3f201acf8d1501227c32e268c
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=key/20240514/us-east-1/dynamodb/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=key/20240520/us-east-1/dynamodb/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=4daab6481522dc81dc65d32bd749ac3e60d3577b28344b1b463eb473c7d1e718
+        Signature=198096d9ccbeef2716208ed675b3f19992e322c508faa7cf797f480459db7910
       Content-Length:
-      - '107'
+      - '154'
       Accept:
       - "*/*"
   response:
@@ -241,9 +292,9 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 14 May 2024 15:08:57 GMT
+      - Mon, 20 May 2024 00:35:42 GMT
       X-Amzn-Requestid:
-      - 43c4093e-afb1-4ba1-a57a-2d1d75fb1580
+      - 205a69bf-5737-42f2-abb4-5cb12c44b364
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Crc32:
@@ -255,5 +306,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "{}"
-  recorded_at: Tue, 14 May 2024 15:08:57 GMT
+  recorded_at: Mon, 20 May 2024 00:35:42 GMT
 recorded_with: VCR 6.2.0
