@@ -6,7 +6,6 @@ module DynamodbRecord
     include Enumerable
 
     def initialize(pager, base_object)
-      puts "entre al contructor de HasManyCollection"
       @base_object = base_object
       @pager = pager
       @klass = @pager.klass
@@ -98,7 +97,7 @@ module DynamodbRecord
       
       puts "key #{key}"
       @items
-      
+
     end
   end
 end
