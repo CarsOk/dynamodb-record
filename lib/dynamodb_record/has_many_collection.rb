@@ -49,23 +49,6 @@ module DynamodbRecord
       object
     end
 
-
-    # def <<(object)
-    #   table_name = @options[:table_name]
-    #   item = @options[:expression_attribute_values].transform_keys { |k| k.delete_prefix(':').to_sym }
-    #   item[:"#{@base_model}_id"] = object.id
-    #   item[:created_at] = DateTime.now.to_s
-    #   key = {table_name:, item:}
-
-    #   res = @items.none? { |data| data.id == object.id }
-    #   if res
-    #     @klass.client.put_item(key)
-    #     @items << object
-    #   end
-    #   @items
-    # end
-
-
     def << (object)
       puts "@base_object"
       p @base_object
@@ -115,39 +98,7 @@ module DynamodbRecord
       
       puts "key #{key}"
       @items
-
-      # update = @klass.send(:from_database, item)
-
-      # if object.new_record
-        # foreign_key = @options[:expression_attribute_values].transform_keys { |k| k.delete_prefix(':').to_sym }
-        
-        
-
-        
-
-        # current = @klass.send(:from_database, item)
-
-        # p 'objectR'
-        # p objectR
-        # item[:id] = SecureRandom.uuid
-        
-        # table_name = @options[:table_name]
-  
-  
-        # key = {table_name:, item:}
-  
-        # puts "key #{key}"
-  
-        # @klass.client.put_item(key)
-      # else
-        # foreign_key = @options[:expression_attribute_values].transform_keys { |k| k.delete_prefix(':').to_sym }
-        # table_name = @options[:table_name]
-        # key = {table_name:, item:}
-      # end
-
-      # p @options[:expression_attribute_values][":car_id"]
-      # object.car_id = @options[:expression_attribute_values][:car_id]
-
+      
     end
   end
 end
