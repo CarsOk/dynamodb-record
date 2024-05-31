@@ -10,7 +10,7 @@ http_interactions:
       Accept-Encoding:
       - ''
       Amz-Sdk-Invocation-Id:
-      - 77e7dc18-aa82-431f-8459-c3905d3b3ea8
+      - 314beac9-d0cf-4805-abc2-7c70a0754491
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Target:
@@ -21,13 +21,13 @@ http_interactions:
       Host:
       - localhost:8000
       X-Amz-Date:
-      - 20240531T184929Z
+      - 20240531T203020Z
       X-Amz-Content-Sha256:
       - 3f40080fdb7ac1732232c14b86645a9ffbd3f94cf8ecda6b3c584d105288bb8d
       Authorization:
       - AWS4-HMAC-SHA256 Credential=key/20240531/us-east-1/dynamodb/aws4_request,
         SignedHeaders=amz-sdk-invocation-id;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=1b5a281bff26ed47c336009f279e883256a43404a508d34b46d14a62994cf2f3
+        Signature=59c153673df271ae7e15ce926bb96e57c97e5bbdb144965db95d981532798903
       Content-Length:
       - '58'
       Accept:
@@ -38,21 +38,74 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 31 May 2024 18:49:29 GMT
+      - Fri, 31 May 2024 20:30:20 GMT
       X-Amzn-Requestid:
-      - 89537e38-2bfa-4649-933e-79ea13f44791
+      - 2c14050e-4359-404b-9715-c3da76a85757
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Crc32:
-      - '67520286'
+      - '2965787765'
       Content-Length:
       - '124'
       Server:
       - Jetty(9.4.48.v20220622)
     body:
       encoding: UTF-8
-      string: '{"Item":{"updated_at":{"S":"2024-05-31T08:51:36-05:00"},"created_at":{"S":"2024-05-31T08:51:36-05:00"},"id":{"S":"UVX455"}}}'
-  recorded_at: Fri, 31 May 2024 18:49:29 GMT
+      string: '{"Item":{"updated_at":{"S":"2024-05-31T15:29:47-05:00"},"created_at":{"S":"2024-05-31T15:29:47-05:00"},"id":{"S":"UVX455"}}}'
+  recorded_at: Fri, 31 May 2024 20:30:20 GMT
+- request:
+    method: post
+    uri: http://localhost:8000/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"fleteo-v2-insurances","Key":{"id":{"S":"12"}}}'
+    headers:
+      Accept-Encoding:
+      - ''
+      Amz-Sdk-Invocation-Id:
+      - f8724733-8f77-4178-8ad5-808fdf61cf4b
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Target:
+      - DynamoDB_20120810.GetItem
+      User-Agent:
+      - aws-sdk-ruby3/3.196.1 ua/2.0 api/dynamodb#1.111.0 os/macos#23 md/arm64 lang/ruby#3.2.3
+        md/3.2.3 cfg/retry-mode#legacy
+      Host:
+      - localhost:8000
+      X-Amz-Date:
+      - 20240531T203020Z
+      X-Amz-Content-Sha256:
+      - da3a24717dbc27424e81e87e4cfb03796c8581711e45360e07d3609d31505ca8
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=key/20240531/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=amz-sdk-invocation-id;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=a4ea6c94280692b6464d17d0087e9c1bfed750dd0fdb870e0eb7c76856157667
+      Content-Length:
+      - '60'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 31 May 2024 20:30:20 GMT
+      X-Amzn-Requestid:
+      - 5e6710b1-b4ea-4d87-bb56-88344efb712a
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Crc32:
+      - '3677645482'
+      Content-Length:
+      - '120'
+      Server:
+      - Jetty(9.4.48.v20220622)
+    body:
+      encoding: UTF-8
+      string: '{"Item":{"updated_at":{"S":"2024-05-31T15:29:47-05:00"},"created_at":{"S":"2024-05-31T15:29:47-05:00"},"id":{"S":"12"}}}'
+  recorded_at: Fri, 31 May 2024 20:30:20 GMT
 - request:
     method: post
     uri: http://localhost:8000/
@@ -64,7 +117,7 @@ http_interactions:
       Accept-Encoding:
       - ''
       Amz-Sdk-Invocation-Id:
-      - 2d504b47-b94a-4ebb-88de-e57f4a4e2ce1
+      - 2b9951c5-71ec-49eb-8c77-b60042da4350
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Target:
@@ -75,13 +128,13 @@ http_interactions:
       Host:
       - localhost:8000
       X-Amz-Date:
-      - 20240531T184929Z
+      - 20240531T203020Z
       X-Amz-Content-Sha256:
       - 2fbf9fb79b236e4c2e9a9151b2960806f4b6841c9205fbe138b73cbd16ff4fee
       Authorization:
       - AWS4-HMAC-SHA256 Credential=key/20240531/us-east-1/dynamodb/aws4_request,
         SignedHeaders=amz-sdk-invocation-id;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=6501947de51cdc24efae78fa55da35117c65b4be07c4c29f9afd6910038c4732
+        Signature=3d4211e7f85562b186d025d912bf01bc37c6debb520ac7418671e27fe6058349
       Content-Length:
       - '211'
       Accept:
@@ -92,52 +145,51 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 31 May 2024 18:49:29 GMT
+      - Fri, 31 May 2024 20:30:20 GMT
       X-Amzn-Requestid:
-      - c41d94bc-01c8-46ae-9bf0-387010056ce2
+      - bb20bf90-d10e-41ac-a50e-49b4cce0bbbd
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Crc32:
-      - '2336858199'
+      - '858421741'
       Content-Length:
-      - '590'
+      - '372'
       Server:
       - Jetty(9.4.48.v20220622)
     body:
       encoding: UTF-8
-      string: '{"Items":[{"name":{"S":"Seguros ABC"},"created_at":{"S":"2024-05-31T13:46:00-05:00"},"id":{"S":"1"},"updated_at":{"S":"2024-05-31T13:46:00-05:00"},"car_id":{"S":"UVX455"}},{"name":{"S":"fasecolda"},"created_at":{"S":"2024-05-31T13:49:29-05:00"},"id":{"S":"8e921c64-1a46-4657-9ca0-d0573c842e1e"},"updated_at":{"S":"2024-05-31T13:49:29-05:00"},"car_id":{"S":"UVX455"}},{"name":{"S":"fasecolda"},"created_at":{"S":"2024-05-31T13:46:00-05:00"},"id":{"S":"c2d834b2-3ae8-4b6a-893e-97f951013342"},"updated_at":{"S":"2024-05-31T13:46:00-05:00"},"car_id":{"S":"UVX455"}}],"Count":3,"ScannedCount":3}'
-  recorded_at: Fri, 31 May 2024 18:49:29 GMT
+      string: '{"Items":[{"created_at":{"S":"2024-05-31T15:29:47-05:00"},"id":{"S":"12345"},"updated_at":{"S":"2024-05-31T15:29:47-05:00"},"car_id":{"S":"UVX455"}},{"name":{"S":"fasecolda"},"created_at":{"S":"2024-05-31T15:30:20-05:00"},"id":{"S":"0df30188-0d38-4536-b202-99fff8484ee4"},"updated_at":{"S":"2024-05-31T15:30:20-05:00"},"car_id":{"S":"UVX455"}}],"Count":2,"ScannedCount":2}'
+  recorded_at: Fri, 31 May 2024 20:30:20 GMT
 - request:
     method: post
     uri: http://localhost:8000/
     body:
       encoding: UTF-8
-      string: '{"TableName":"fleteo-v2-insurances","KeyConditionExpression":"#car_id
-        = :car_id","ExpressionAttributeNames":{"#car_id":"car_id"},"IndexName":"car_id_index","ExpressionAttributeValues":{":car_id":{"S":"UVX455"}}}'
+      string: '{"TableName":"fleteo-v2-insurances","Item":{"updated_at":{"S":"2024-05-31T15:30:20-05:00"},"created_at":{"S":"2024-05-31T15:29:47-05:00"},"id":{"S":"12"},"car_id":{"S":"UVX455"}}}'
     headers:
       Accept-Encoding:
       - ''
       Amz-Sdk-Invocation-Id:
-      - 7bfa11ae-8a1d-4c91-ae76-cbce2de23c1e
+      - 46ed67b8-d0a2-4eb5-81d0-47deb1cdc451
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Target:
-      - DynamoDB_20120810.Query
+      - DynamoDB_20120810.PutItem
       User-Agent:
       - aws-sdk-ruby3/3.196.1 ua/2.0 api/dynamodb#1.111.0 os/macos#23 md/arm64 lang/ruby#3.2.3
         md/3.2.3 cfg/retry-mode#legacy
       Host:
       - localhost:8000
       X-Amz-Date:
-      - 20240531T184929Z
+      - 20240531T203020Z
       X-Amz-Content-Sha256:
-      - 2fbf9fb79b236e4c2e9a9151b2960806f4b6841c9205fbe138b73cbd16ff4fee
+      - ad4d1a8b3b25b7451405e197d9c389bb615fc6a0197e8b54138480299a73b9bc
       Authorization:
       - AWS4-HMAC-SHA256 Credential=key/20240531/us-east-1/dynamodb/aws4_request,
         SignedHeaders=amz-sdk-invocation-id;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=2aef8804d602bda09984978193ac32729959287d15cc4bda799c539640f0b9a8
+        Signature=35289cc96048a2c03ae3578533ee8c9dbd39fbe40e8068d4c0c7155ef677482e
       Content-Length:
-      - '211'
+      - '179'
       Accept:
       - "*/*"
   response:
@@ -146,19 +198,19 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 31 May 2024 18:49:29 GMT
+      - Fri, 31 May 2024 20:30:20 GMT
       X-Amzn-Requestid:
-      - fc1488fd-b8e1-41d8-8403-a8ce817fb5a7
+      - b49203fc-4af1-422b-874b-aac176376514
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Crc32:
-      - '2336858199'
+      - '2745614147'
       Content-Length:
-      - '590'
+      - '2'
       Server:
       - Jetty(9.4.48.v20220622)
     body:
       encoding: UTF-8
-      string: '{"Items":[{"name":{"S":"Seguros ABC"},"created_at":{"S":"2024-05-31T13:46:00-05:00"},"id":{"S":"1"},"updated_at":{"S":"2024-05-31T13:46:00-05:00"},"car_id":{"S":"UVX455"}},{"name":{"S":"fasecolda"},"created_at":{"S":"2024-05-31T13:49:29-05:00"},"id":{"S":"8e921c64-1a46-4657-9ca0-d0573c842e1e"},"updated_at":{"S":"2024-05-31T13:49:29-05:00"},"car_id":{"S":"UVX455"}},{"name":{"S":"fasecolda"},"created_at":{"S":"2024-05-31T13:46:00-05:00"},"id":{"S":"c2d834b2-3ae8-4b6a-893e-97f951013342"},"updated_at":{"S":"2024-05-31T13:46:00-05:00"},"car_id":{"S":"UVX455"}}],"Count":3,"ScannedCount":3}'
-  recorded_at: Fri, 31 May 2024 18:49:29 GMT
+      string: "{}"
+  recorded_at: Fri, 31 May 2024 20:30:20 GMT
 recorded_with: VCR 6.2.0

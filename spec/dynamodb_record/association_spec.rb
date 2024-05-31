@@ -55,7 +55,7 @@ RSpec.describe DynamodbRecord::Associations, :vcr do
 
     it 'create item with <<' do
       car = Car.find!('UVX455')
-      insurance = Insurance.new(id: '1', name: 'Seguros ABC')
+      insurance = Insurance.find!('12')
       car_insurances = car.insurances << insurance
       expect(car_insurances.any? { |item| item.id == insurance.id }).to eq(true)
     end

@@ -10,7 +10,7 @@ http_interactions:
       Accept-Encoding:
       - ''
       Amz-Sdk-Invocation-Id:
-      - 291961ce-afde-4dda-bcf8-e6c8feacfad5
+      - d5480aab-96f6-4398-98fa-3a4982ccdc4e
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Target:
@@ -21,13 +21,13 @@ http_interactions:
       Host:
       - localhost:8000
       X-Amz-Date:
-      - 20240531T184929Z
+      - 20240531T203020Z
       X-Amz-Content-Sha256:
       - 3f40080fdb7ac1732232c14b86645a9ffbd3f94cf8ecda6b3c584d105288bb8d
       Authorization:
       - AWS4-HMAC-SHA256 Credential=key/20240531/us-east-1/dynamodb/aws4_request,
         SignedHeaders=amz-sdk-invocation-id;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=4e4a47b8eee4fdeccb279dd2043709aa89c44c6896fbadf68f0d89061a7fda1d
+        Signature=9c6361a5da62df8a3e5ca79c37db22c4942fd817f65461a25e8aa108ec25c08e
       Content-Length:
       - '58'
       Accept:
@@ -38,21 +38,21 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 31 May 2024 18:49:29 GMT
+      - Fri, 31 May 2024 20:30:20 GMT
       X-Amzn-Requestid:
-      - 1e60cb22-b1c8-4e72-ac7d-746531b4acfb
+      - 19bbb46e-0bcc-423a-acc3-4ab7745374a4
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Crc32:
-      - '67520286'
+      - '2965787765'
       Content-Length:
       - '124'
       Server:
       - Jetty(9.4.48.v20220622)
     body:
       encoding: UTF-8
-      string: '{"Item":{"updated_at":{"S":"2024-05-31T08:51:36-05:00"},"created_at":{"S":"2024-05-31T08:51:36-05:00"},"id":{"S":"UVX455"}}}'
-  recorded_at: Fri, 31 May 2024 18:49:29 GMT
+      string: '{"Item":{"updated_at":{"S":"2024-05-31T15:29:47-05:00"},"created_at":{"S":"2024-05-31T15:29:47-05:00"},"id":{"S":"UVX455"}}}'
+  recorded_at: Fri, 31 May 2024 20:30:20 GMT
 - request:
     method: post
     uri: http://localhost:8000/
@@ -64,7 +64,7 @@ http_interactions:
       Accept-Encoding:
       - ''
       Amz-Sdk-Invocation-Id:
-      - 5f5627b4-adf8-409c-babb-72deee58e2a7
+      - be83b147-997e-44b9-835d-8c09b3340060
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Target:
@@ -75,13 +75,13 @@ http_interactions:
       Host:
       - localhost:8000
       X-Amz-Date:
-      - 20240531T184929Z
+      - 20240531T203020Z
       X-Amz-Content-Sha256:
       - 2fbf9fb79b236e4c2e9a9151b2960806f4b6841c9205fbe138b73cbd16ff4fee
       Authorization:
       - AWS4-HMAC-SHA256 Credential=key/20240531/us-east-1/dynamodb/aws4_request,
         SignedHeaders=amz-sdk-invocation-id;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=548ad26e7af7240fcdf27ae41b63117c98972f52ad5051e2b9202d6c06f768dc
+        Signature=300ef7bb58456c7033f82101578a9496667f3ea45dbe04dc669c4b7ebf101e44
       Content-Length:
       - '211'
       Accept:
@@ -92,19 +92,19 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 31 May 2024 18:49:29 GMT
+      - Fri, 31 May 2024 20:30:20 GMT
       X-Amzn-Requestid:
-      - e4a32599-ba2e-40ca-b03d-dbeee1fcf16a
+      - 4512df20-c186-4890-bccc-493ddd3180f8
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Crc32:
-      - '2791501785'
+      - '4284377425'
       Content-Length:
-      - '395'
+      - '177'
       Server:
       - Jetty(9.4.48.v20220622)
     body:
       encoding: UTF-8
-      string: '{"Items":[{"name":{"S":"Seguros ABC"},"created_at":{"S":"2024-05-31T13:46:00-05:00"},"id":{"S":"1"},"updated_at":{"S":"2024-05-31T13:46:00-05:00"},"car_id":{"S":"UVX455"}},{"name":{"S":"fasecolda"},"created_at":{"S":"2024-05-31T13:46:00-05:00"},"id":{"S":"c2d834b2-3ae8-4b6a-893e-97f951013342"},"updated_at":{"S":"2024-05-31T13:46:00-05:00"},"car_id":{"S":"UVX455"}}],"Count":2,"ScannedCount":2}'
-  recorded_at: Fri, 31 May 2024 18:49:29 GMT
+      string: '{"Items":[{"created_at":{"S":"2024-05-31T15:29:47-05:00"},"id":{"S":"12345"},"updated_at":{"S":"2024-05-31T15:29:47-05:00"},"car_id":{"S":"UVX455"}}],"Count":1,"ScannedCount":1}'
+  recorded_at: Fri, 31 May 2024 20:30:20 GMT
 recorded_with: VCR 6.2.0

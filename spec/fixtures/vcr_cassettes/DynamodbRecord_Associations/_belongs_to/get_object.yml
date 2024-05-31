@@ -9,23 +9,25 @@ http_interactions:
     headers:
       Accept-Encoding:
       - ''
+      Amz-Sdk-Invocation-Id:
+      - 82a096b7-4dcb-4971-a2f5-2a5422bd6896
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Target:
       - DynamoDB_20120810.GetItem
       User-Agent:
-      - aws-sdk-ruby3/3.191.3 ua/2.0 api/dynamodb#1.105.0 os/macos#20 md/x86_64 lang/ruby#3.2.3
+      - aws-sdk-ruby3/3.196.1 ua/2.0 api/dynamodb#1.111.0 os/macos#23 md/arm64 lang/ruby#3.2.3
         md/3.2.3 cfg/retry-mode#legacy
       Host:
       - localhost:8000
       X-Amz-Date:
-      - 20240514T151341Z
+      - 20240531T203020Z
       X-Amz-Content-Sha256:
       - efb57ec65a1d5400e11f2c1d7ef1abae0923c0d84b3e4a442db0abcb6408f474
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=key/20240514/us-east-1/dynamodb/aws4_request,
-        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=ee626915d5626ac0c4f324b1eb64101d695f890fa0ea6af9b35ee366e0ebb764
+      - AWS4-HMAC-SHA256 Credential=key/20240531/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=amz-sdk-invocation-id;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=f0f1f9990edd7886e7c723b18d07574ef1241b6df0a68edd907cab7c8c0675e3
       Content-Length:
       - '63'
       Accept:
@@ -36,21 +38,21 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 14 May 2024 15:13:41 GMT
+      - Fri, 31 May 2024 20:30:20 GMT
       X-Amzn-Requestid:
-      - 2e572970-2362-4c8e-ab2a-9d498be1cedc
+      - 25f44928-cec6-4efc-a435-219587453290
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Crc32:
-      - '4004972195'
+      - '1835808279'
       Content-Length:
-      - '80'
+      - '147'
       Server:
-      - Jetty(11.0.17)
+      - Jetty(9.4.48.v20220622)
     body:
       encoding: UTF-8
-      string: '{"Item":{"name":{"S":"Colcerautos"},"car_id":{"S":"UVX455"},"id":{"S":"12345"}}}'
-  recorded_at: Tue, 14 May 2024 15:13:41 GMT
+      string: '{"Item":{"created_at":{"S":"2024-05-31T15:29:47-05:00"},"id":{"S":"12345"},"updated_at":{"S":"2024-05-31T15:29:47-05:00"},"car_id":{"S":"UVX455"}}}'
+  recorded_at: Fri, 31 May 2024 20:30:20 GMT
 - request:
     method: post
     uri: http://localhost:8000/
@@ -60,23 +62,25 @@ http_interactions:
     headers:
       Accept-Encoding:
       - ''
+      Amz-Sdk-Invocation-Id:
+      - 2a2bee78-402a-4cb4-8df1-7335168c7e1f
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Target:
       - DynamoDB_20120810.GetItem
       User-Agent:
-      - aws-sdk-ruby3/3.191.3 ua/2.0 api/dynamodb#1.105.0 os/macos#20 md/x86_64 lang/ruby#3.2.3
+      - aws-sdk-ruby3/3.196.1 ua/2.0 api/dynamodb#1.111.0 os/macos#23 md/arm64 lang/ruby#3.2.3
         md/3.2.3 cfg/retry-mode#legacy
       Host:
       - localhost:8000
       X-Amz-Date:
-      - 20240514T151341Z
+      - 20240531T203020Z
       X-Amz-Content-Sha256:
       - 3f40080fdb7ac1732232c14b86645a9ffbd3f94cf8ecda6b3c584d105288bb8d
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=key/20240514/us-east-1/dynamodb/aws4_request,
-        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=6efa4f968328b726cd30c758f09068bad22f44524d301b0bbc9d198a873aac06
+      - AWS4-HMAC-SHA256 Credential=key/20240531/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=amz-sdk-invocation-id;content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=6083bcf5e4610b6881eea1980aaf65689809b86ff8deec22777cda31ae753670
       Content-Length:
       - '58'
       Accept:
@@ -87,19 +91,19 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 14 May 2024 15:13:41 GMT
+      - Fri, 31 May 2024 20:30:20 GMT
       X-Amzn-Requestid:
-      - 25132fc8-9bae-4ed1-86e4-09bb515d7d51
+      - 16c19001-7dad-432e-a479-3d8fc978ff97
       Content-Type:
       - application/x-amz-json-1.0
       X-Amz-Crc32:
-      - '590923779'
+      - '2965787765'
       Content-Length:
-      - '149'
+      - '124'
       Server:
-      - Jetty(11.0.17)
+      - Jetty(9.4.48.v20220622)
     body:
       encoding: UTF-8
-      string: '{"Item":{"marca":{"S":"Chvrolet"},"created_at":{"S":"2024-05-07T14:09:25-05:00"},"id":{"S":"UVX455"},"updated_at":{"S":"2024-05-07T14:09:25-05:00"}}}'
-  recorded_at: Tue, 14 May 2024 15:13:41 GMT
+      string: '{"Item":{"updated_at":{"S":"2024-05-31T15:29:47-05:00"},"created_at":{"S":"2024-05-31T15:29:47-05:00"},"id":{"S":"UVX455"}}}'
+  recorded_at: Fri, 31 May 2024 20:30:20 GMT
 recorded_with: VCR 6.2.0
