@@ -42,7 +42,6 @@ module DynamodbRecord
     end
 
     def <<(pluralizable_object)
-
       pluralizable_object = [pluralizable_object] unless pluralizable_object.is_a?(Array)
 
       pluralizable_object.each do |object|
@@ -58,7 +57,7 @@ module DynamodbRecord
           @items << object
         end
       end
-      
+
       @items
     end
 
