@@ -76,6 +76,48 @@ user = User.find('f9b351b0-d06d-4fff-b8d4-8af162e2b8ba')
 User.find!('f9b351b0-d06d-4fff-b8d4-8af162e2b8ba')
 ```
 
+### The has_many Association
+
+Associations are placed in their respective classes
+
+**car.rb**
+
+```ruby
+class Car
+  include DynamodbRecord::Document
+
+  field :marca, :string
+  has_many :insurances
+end
+```
+
+**insurance.rb**
+
+```ruby
+class Insurance
+  include DynamodbRecord::Document
+
+  field :name, :string
+  field :car_id, :string, index: true
+  belongs_to :car
+end
+```
+
+There are many ways to generate associations:
+
+#### '<<' method
+
+```ruby
+# Find a car with ID 'UVX123'
+car = Car.find('UVX123')
+
+# Create a new insurance instance
+insurance = Insurance.new(name: 'Bolivar')
+
+# Associate the insurance with the car
+car.insurances << insurance
+```
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/dynamo_record/fork )

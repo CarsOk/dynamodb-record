@@ -15,7 +15,6 @@ module DynamodbRecord
       @pager.items.each do |object|
         @items << @klass.send(:from_database, object)
       end
-      
     end
 
     def each(&)
@@ -48,30 +47,22 @@ module DynamodbRecord
       object
     end
 
-    def << (object)
+    def <<(pluralizable_object)
+      pluralizable_object = [pluralizable_object] unless pluralizable_object.is_a?(Array)
 
-      raise "#{@object.class} must be saved" if @base_object.new_record
+      pluralizable_object.each do |object|
+        res = @items.none? { |data| data.id == object.id }
 
-      foreign_key = @options[:expression_attribute_values].transform_keys { |k| k.delete_prefix(':').to_sym }
+        next unless res
 
-      table_name = @options[:table_name]
+        foreign_attribute = "#{@base_object.class.to_s.downcase}_id="
+        object.send(foreign_attribute, @base_object.id)
+        object.save!
 
-      item = foreign_key.merge(object.attributes)
-
-      
-      key = {table_name:, item:}
-      
-      res = @items.none? { |data| data.id == object.id }
-      
-      if res
-        item[:updated_at] = DateTime.now.to_s
-        item[:created_at] = object.created_at.to_s
-        @klass.client.put_item(key)
         @items << object
       end
 
       @items
-
     end
   end
 end

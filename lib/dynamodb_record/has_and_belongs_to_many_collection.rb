@@ -41,18 +41,24 @@ module DynamodbRecord
       self.class.new(@pager.next_page(last_key), @base_object) if last_key
     end
 
-    def <<(object)
-      table_name = @options[:table_name]
-      item = @options[:expression_attribute_values].transform_keys { |k| k.delete_prefix(':').to_sym }
-      item[:"#{@base_model}_id"] = object.id
-      item[:created_at] = DateTime.now.to_s
-      key = {table_name:, item:}
+    def <<(pluralizable_object)
 
-      res = @items.none? { |data| data.id == object.id }
-      if res
-        @klass.client.put_item(key)
-        @items << object
+      pluralizable_object = [pluralizable_object] unless pluralizable_object.is_a?(Array)
+
+      pluralizable_object.each do |object|
+        table_name = @options[:table_name]
+        item = @options[:expression_attribute_values].transform_keys { |k| k.delete_prefix(':').to_sym }
+        item[:"#{@base_model}_id"] = object.id
+        item[:created_at] = DateTime.now.to_s
+        key = {table_name:, item:}
+
+        res = @items.none? { |data| data.id == object.id }
+        if res
+          @klass.client.put_item(key)
+          @items << object
+        end
       end
+      
       @items
     end
 
