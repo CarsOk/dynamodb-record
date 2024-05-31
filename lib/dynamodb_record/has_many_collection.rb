@@ -49,23 +49,6 @@ module DynamodbRecord
     end
 
     def << (object)
-      puts "@base_object"
-      p @base_object
-      puts "@pager"
-      p @pager
-      puts "@klass"
-      p @klass.class
-      puts "@options"
-      p @options
-      puts "@foreign_key"
-      p @foreign_key
-      puts "@items"
-      p @items
-      puts "object"
-      p object
-
-      puts 'object.new_record'
-      p object.new_record
 
       raise "#{@object.class} must be saved" if @base_object.new_record
 
@@ -80,22 +63,13 @@ module DynamodbRecord
       
       res = @items.none? { |data| data.id == object.id }
       
-      puts "res #{res}"
-      
-      puts "key #{key}"
-      
       if res
         item[:updated_at] = DateTime.now.to_s
         item[:created_at] = object.created_at.to_s
-        puts "antes de guardar objeto"
         @klass.client.put_item(key)
-        puts "guarde el objeto"
         @items << object
       end
 
-      puts "res #{res}"
-      
-      puts "key #{key}"
       @items
 
     end
