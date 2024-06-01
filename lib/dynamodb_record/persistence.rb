@@ -108,7 +108,7 @@ module DynamodbRecord
       options = self.class.default_options
 
       self.id = SecureRandom.uuid if id.nil?
-      time = Time.now
+      time = DateTime.now.to_s
       self.created_at = time if created_at.nil?
       self.updated_at = time
 

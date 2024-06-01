@@ -38,9 +38,7 @@ RSpec.describe DynamodbRecord::Associations, :vcr do
       car.users.destroy(user)
       expect(car.users.count).to eq(2)
     end
-
   end
-
 
   describe '#has_many' do
     it 'get collection' do
@@ -53,6 +51,13 @@ RSpec.describe DynamodbRecord::Associations, :vcr do
       car = Car.find!('UVX455')
       insurance = car.insurances.create!(name: 'fasecolda')
       expect(insurance).to be_an(Insurance)
+    end
+
+    it 'create item with <<' do
+      car = Car.find!('UVX455')
+      insurance = Insurance.find!('12')
+      car_insurances = car.insurances << insurance
+      expect(car_insurances.any? { |item| item.id == insurance.id }).to eq(true)
     end
   end
 

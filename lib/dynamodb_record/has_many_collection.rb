@@ -46,5 +46,23 @@ module DynamodbRecord
       @items << object
       object
     end
+
+    def <<(pluralizable_object)
+      pluralizable_object = [pluralizable_object] unless pluralizable_object.is_a?(Array)
+
+      pluralizable_object.each do |object|
+        res = @items.none? { |data| data.id == object.id }
+
+        next unless res
+
+        foreign_attribute = "#{@base_object.class.to_s.downcase}_id="
+        object.send(foreign_attribute, @base_object.id)
+        object.save!
+
+        @items << object
+      end
+
+      @items
+    end
   end
 end
